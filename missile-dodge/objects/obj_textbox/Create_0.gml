@@ -1,7 +1,7 @@
 // whether the textbox responds to keyboard input or not
 selected = false;
 // max width of text inside text box
-max_width = 400;
+max_width = 300;
 // text currently drawn inside text box
 text = "";
 keyboard_string = "";
