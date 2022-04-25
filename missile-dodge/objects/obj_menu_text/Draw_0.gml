@@ -24,8 +24,4 @@ switch (obj_menu_manager.menu_state) {
 		
 	}
 	break;
-	case menuState.options: {
-		
-	}
-	break;
 }

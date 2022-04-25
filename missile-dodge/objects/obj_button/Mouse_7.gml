@@ -1,4 +1,4 @@
-if (obj_menu_manager.menu_state == menu_state) {
+if (active) {
 	if (image_index == 1) {
 		// button has just been pressed.
 		audio_play_sound(snd_press, 0, false);
@@ -6,12 +6,11 @@ if (obj_menu_manager.menu_state == menu_state) {
 			// execute stuff based on the button type
 			case buttonType.change_menu_state: {
 				// change state to button's destination.
-				obj_menu_manager.menu_state = destination_state;
+				if (instance_exists(obj_menu_manager)) obj_menu_manager.menu_state = destination_state;
 			}
 			break;
 			case buttonType.change_player_name: {
 				var _input = trim(linked_text_box.text); // player's input after trimming spaces
-				
 				if (linked_text_box.selected) {
 					// Username has just entered a blank username - bad input
 					if (string_length(_input) <= 0) {
@@ -31,7 +30,7 @@ if (obj_menu_manager.menu_state == menu_state) {
 							ini_close();
 							
 							// change the menu state
-							// NOTE: this shouldn't change the menu state if we are on the options menu state.
+							// NOTE: this shouldn't change the menu state if we are on the OPTIONS menu state.
 							obj_menu_manager.menu_state = destination_state;
 						}
 					}
@@ -39,14 +38,16 @@ if (obj_menu_manager.menu_state == menu_state) {
 			}
 			break;
 			case buttonType.exit_game: {
+				// exit game
 				game_end();
 			}
 			break;
 			case buttonType.start_game: {
-			
+				
 			}
 			break;
 			case buttonType.toggle_damage_indicators: {
+				// toggle damage indicators, and update it in ini file
 				global.options_damage_indicators = !global.options_damage_indicators;
 				ini_open("save.ini");
 				ini_write_real("options", "damage_indicators", global.options_damage_indicators);
@@ -54,6 +55,7 @@ if (obj_menu_manager.menu_state == menu_state) {
 			}
 			break;
 			case buttonType.toggle_particles: {
+				// toggle particles, and update it in ini file
 				global.options_particles = !global.options_particles;
 				ini_open("save.ini");
 				ini_write_real("options", "particles", global.options_particles);

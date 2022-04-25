@@ -16,9 +16,10 @@ line = true;
 alarm[0] = 50;
 
 // the menu state that the textbox is shown on
-menu_state = menuState.first_start; 
+active_state = menuState.first_start;
+active = true; // whether textbox is currently active
 
-// method that sets a new prompt, stays for 2 secs then fades in 1 sec
+// method that sets a new prompt for the textbox
 function new_prompt(str) {
 	prompt = str;
 	can_lose_alpha = false;

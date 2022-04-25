@@ -1,6 +1,5 @@
 // randomise the game
 randomise();
-
 // set fullscreen
 window_set_fullscreen(true);
 

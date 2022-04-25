@@ -1,4 +1,4 @@
-if ((obj_menu_manager.menu_state == menu_state)) {
+if (active) {
 	if (global.player_icon != icon) {
 		audio_play_sound(snd_select, 0, false);
 		global.player_icon = icon;

@@ -3,7 +3,9 @@
 text = ""; // text displayed on the button
 sprite_index = spr_button_blue; // color and size of the button
 button_type_ = buttonType.change_menu_state; // what the button does
-menu_state = menuState.first_start; // which menu state the button is active on
+// which state the button is active on, can be set to a menuState or a gameState.
+active_state = menuState.first_start; 
+
 
 // Button's sub properties
 
@@ -11,9 +13,11 @@ menu_state = menuState.first_start; // which menu state the button is active on
 // Note that change_player_name button will ALSO change menu state.
 destination_state = menuState.first_start; 
 
-// if button_type = change_player_name, then which textbox should it pull text input from?
-// this variable should contain an instance ID.
+// for change_player_name buttons, the instance ID of the textbox that it pulls text input from.
 linked_text_box = -1;
 
+// for start_game buttons, the level that the button is associated with.
+level = 1;
 
+active = true; // whether button is active
 

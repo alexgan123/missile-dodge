@@ -1,8 +1,8 @@
-if (obj_menu_manager.menu_state == menu_state) {
+if (active) {
 	if (!selected) {
 		selected = true;
-		// important: when selecting the textbox, make sure
-		// text and keyboard_string are both reset
+		// reset keyboard_string when selecting the textbox to clear
+		// whatever was typed before
 		text = "";
 		keyboard_string = "";
 	}

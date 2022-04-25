@@ -1,4 +1,4 @@
-if (obj_menu_manager.menu_state == menu_state) {
+if (active) {
 	draw_self();
 
 	if (selected) {

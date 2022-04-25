@@ -1,8 +1,15 @@
-// draw the text on the button only if it is on the correct menu state
-if (obj_menu_manager.menu_state == menu_state) {
+// draw text only if the current state matches with the state of the button.
+if (active) {
 	draw_self();
 	var _offset = 0; 
 	if (image_index == 1) _offset = 5;
 	draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-3+_offset, text);
+	
+	if (button_type_ == buttonType.toggle_particles) {
+		draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-70, "Particles: " + (global.options_particles ? "Enabled" : "Disabled"));
+	}
+	else if (button_type_ == buttonType.toggle_damage_indicators) {
+		draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-70, "Damage Indicators: " + (global.options_damage_indicators ? "Enabled" : "Disabled"));
+	}
 }
 

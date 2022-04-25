@@ -1,9 +1,7 @@
-if (obj_menu_manager.menu_state == menu_state) {
+if (active) {
 	// pressing the ENTER KEY is equivalent to pressing the change player name button.
-	
 	if (button_type_ == buttonType.change_player_name) {
 		var _input = trim(linked_text_box.text); // player's input after trimming spaces
-		
 		if (linked_text_box.selected) {
 			// Username has just entered a blank username - bad input
 			if (string_length(_input) <= 0) {
@@ -23,7 +21,7 @@ if (obj_menu_manager.menu_state == menu_state) {
 					ini_close();
 							
 					// change the menu state
-					// NOTE: this shouldn't change the menu state if we are on the options menu state.
+					// NOTE: this shouldn't change the menu state if we are on the OPTIONS menu state.
 					obj_menu_manager.menu_state = destination_state;
 				}
 			}

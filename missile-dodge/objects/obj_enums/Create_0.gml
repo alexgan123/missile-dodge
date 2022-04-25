@@ -10,6 +10,14 @@ enum menuState {
 	profile = 5 // profile menu
 }
 
+// current game state that the player is on
+enum gameState {
+	playing = 0, // currently playing through the game
+	paused = 1, // game is paused
+	died = 2, // player ran out of lives
+	victory = 3 // player survived until the end
+}
+
 // define the different types of buttons
 enum buttonType {
 	change_menu_state = 0, // used to move around menus
@@ -19,3 +27,11 @@ enum buttonType {
 	change_player_name = 4, // change player name
 	start_game = 5 // main menu - start new game
 }
+
+// define the different types of sliders
+enum sliderType {
+	sfx = 0,
+	music = 1
+}
+
+
