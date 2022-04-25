@@ -19,5 +19,7 @@ linked_text_box = -1;
 // for start_game buttons, the level that the button is associated with.
 level = 1;
 
+// helper variables
 active = true; // whether button is active
+pressable = true; // whether button can be clicked down
 

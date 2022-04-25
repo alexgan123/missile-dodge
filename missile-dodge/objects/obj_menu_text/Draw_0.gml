@@ -1,6 +1,6 @@
 switch (obj_menu_manager.menu_state) {
 	case menuState.first_start: {
-		draw_text_f(c_white, fa_center, fa_middle, calibri_30, 960, 300, "Welcome to Missile Dodge!");
+		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 960, 300, "Welcome to Missile Dodge!");
 		draw_text_f(c_white, fa_center, fa_middle, calibri_20, 960, 350, "Enter your player name below:");
 	}
 	break;
@@ -21,7 +21,7 @@ switch (obj_menu_manager.menu_state) {
 	}
 	break;
 	case menuState.level_select: {
-		
+		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 960, 300, "Level Select");
 	}
 	break;
 }

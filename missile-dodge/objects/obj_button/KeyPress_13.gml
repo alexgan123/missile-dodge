@@ -1,4 +1,4 @@
-if (active) {
+if (active) and (pressable) {
 	// pressing the ENTER KEY is equivalent to pressing the change player name button.
 	if (button_type_ == buttonType.change_player_name) {
 		var _input = trim(linked_text_box.text); // player's input after trimming spaces

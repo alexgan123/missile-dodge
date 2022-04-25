@@ -43,7 +43,8 @@ if (active) {
 			}
 			break;
 			case buttonType.start_game: {
-				
+				global.transfer = level;
+				room_goto(rm_game);
 			}
 			break;
 			case buttonType.toggle_damage_indicators: {

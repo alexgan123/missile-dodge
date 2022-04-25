@@ -17,6 +17,9 @@ keyboard_set_map(ord("S"), vk_down);
 #macro color_blue make_colour_rgb(102, 178, 255)
 #macro color_purple make_colour_rgb(255, 51, 255)
 
+// global variable used to transfer level variable between rooms
+global.transfer = 1;
+
 // options, highscore and other variables initialization
 ini_open("save.ini");
 

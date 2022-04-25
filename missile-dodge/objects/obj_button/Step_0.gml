@@ -7,6 +7,23 @@ else {
 	active = false;
 }
 
-if (!active) {
+if (active) {
+	// determine if button is pressable or not
+	if (button_type_ == buttonType.start_game) {
+		pressable = (global.game_level >= level);
+	}
+	else {
+		pressable = true;	
+	}
+}
+else {
+	pressable = false;
 	image_index = 0;	
+}
+
+if (pressable) {
+	image_alpha = 1;
+}
+else {
+	image_alpha = 0.15;
 }
