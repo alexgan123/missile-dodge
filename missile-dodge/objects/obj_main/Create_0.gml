@@ -1,7 +1,7 @@
 // randomise the game
 randomise();
 // set fullscreen
-window_set_fullscreen(true);
+window_set_size(display_get_width(), display_get_height());
 
 // keyboard mapping allows player to move with wasd
 keyboard_set_map(ord("A"), vk_left);
@@ -16,6 +16,9 @@ keyboard_set_map(ord("S"), vk_down);
 #macro color_green make_colour_rgb(102, 255, 102)
 #macro color_blue make_colour_rgb(102, 178, 255)
 #macro color_purple make_colour_rgb(255, 51, 255)
+
+// speed multiplier for vertical missiles
+#macro vertical_multiplier 0.5625
 
 // global variable used to transfer level variable between rooms
 global.transfer = 1;

@@ -63,6 +63,20 @@ if (active) {
 				ini_close();
 			}
 			break;
+			case buttonType.continue_: {
+				if (instance_exists(obj_game_manager)) {
+					obj_game_manager.game_state = gameState.playing;	
+				}
+			}
+			break;
+			case buttonType.restart: {
+				room_restart();
+			}
+			break;
+			case buttonType.back_to_menu: {
+				room_goto(rm_menu);
+			}
+			break;
 		}
 	}
 	image_index = 0;

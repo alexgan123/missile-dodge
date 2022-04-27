@@ -1,3 +1,8 @@
+// Textbox properties
+// the menu state that the textbox is shown on
+active_state = menuState.first_start;
+
+// Helper variables
 // whether the textbox responds to keyboard input or not
 selected = false;
 // max width of text inside text box
@@ -5,20 +10,14 @@ max_width = 300;
 // text currently drawn inside text box
 text = "";
 keyboard_string = "";
-
 // error prompts that are displayed below the textbox
 prompt = "";
 can_lose_alpha = true;
 alpha = 0;
-
 // line blinking for the text box
 line = true;
 alarm[0] = 50;
-
-// the menu state that the textbox is shown on
-active_state = menuState.first_start;
 active = true; // whether textbox is currently active
-
 // method that sets a new prompt for the textbox
 function new_prompt(str) {
 	prompt = str;

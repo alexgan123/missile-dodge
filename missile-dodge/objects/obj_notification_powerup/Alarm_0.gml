@@ -1,0 +1,1 @@
+can_lose_alpha = true;

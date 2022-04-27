@@ -1,3 +1,5 @@
+// Text and string manipulation functions are in this script.
+
 // convenient draw text function
 function draw_text_f(color, halign, valign, font, x, y, str) {
 	draw_set_color(color);
@@ -6,7 +8,6 @@ function draw_text_f(color, halign, valign, font, x, y, str) {
 	draw_set_font(font);
 	draw_text(x, y, str)
 }
-
 
 /// @description string_thousands(real)
 /// @param int
@@ -34,8 +35,6 @@ function thousands(argument0) {
 	    return rtn;
 	}
 }
-
-
 
 // trim spaces the beginning and end of a string. also trims extra spaces in between the string.
 function trim(str) {

@@ -1,3 +1,5 @@
+// This scripts contains the two types of approach functions used in the game: smooth approach and angle approach
+
 /// @param current
 /// @param target
 /// @param speed[0-1]
