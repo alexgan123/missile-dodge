@@ -2,6 +2,7 @@ if (outside_playing_area()) {
 	award_missile();
 }
 if (obj_game_manager.game_state == gameState.playing) {
+	speed = move_speed;
 	if (missile_type == missileType.speedy) {
 		move_speed += 0.01;
 	}
@@ -19,20 +20,22 @@ if (obj_game_manager.game_state == gameState.playing) {
 		}
 	}
 	else if (missile_type == missileType.scatter) {
-		if (fuse > 0) fuse--;
-		else {
-			spawn_bullet(tier, up);
-			spawn_bullet(tier, right);
-			spawn_bullet(tier, left);
-			spawn_bullet(tier, down);
-			award_missile();
+		fuse--;
+		if (fuse <= 0) {
+			speed = 0;
+			if (fuse <= -90) {
+				spawn_bullet(tier, up);
+				spawn_bullet(tier, right);
+				spawn_bullet(tier, left);
+				spawn_bullet(tier, down);
+				award_missile();	
+			}
 		}
 	}
-	speed = move_speed;
 }
 else {
 	speed = 0;	
 }
 
-image_angle = direction - 90;
+image_angle = direction - 90; // invariant
 

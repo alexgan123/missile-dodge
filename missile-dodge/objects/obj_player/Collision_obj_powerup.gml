@@ -1,0 +1,1 @@
+other.destroy_and_apply_effect();

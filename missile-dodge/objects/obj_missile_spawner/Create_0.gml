@@ -19,8 +19,18 @@ function spawn_missile(_type, _tier, _x, _y, _direction) {
 	_missile.update_properties(); 
 }
 
-function spawn_coin() {
+function spawn_coin(_x, _y) {
 	// coins will spawn with a value depending on the current time.
+	var _coin = instance_create_layer(_x, _y, "pickups", obj_coin);
+	_coin.score_ = time;
+}
+
+function spawn_powerup(_type, _x, _y) {
+	// type: powerupType of powerup to be spawned
+	// (x, y) location of powerup
+	var _powerup = instance_create_layer(_x, _y, "pickups", obj_powerup);
+	_powerup.powerup_type = _type;
+	_powerup.update_properties();
 }
 
 // macro for player x and player y

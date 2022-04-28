@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_coin, 0, x, y, xscale, 1, 0, c_white, alpha);

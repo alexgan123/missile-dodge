@@ -15,3 +15,10 @@ y += v_speed;
 x = clamp(x, (sprite_width/2), room_width - (sprite_width/2));
 y = clamp(y, (sprite_height/2), room_height - (sprite_height/2));
 
+if (obj_game_manager.immune) {
+	image_alpha = 0.5;
+}
+else {
+	image_alpha = 1;
+}
+

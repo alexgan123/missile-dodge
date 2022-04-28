@@ -2,9 +2,10 @@
 
 // function to display a damage indicator above the players head
 function show_damage_indicator(_damage) {
-	var _ind = instance_create_layer(x+random_range(-20, 20), y-40, "ui", obj_damage_indicator);
+	var _ind = instance_create_layer(obj_player.x+random_range(-20, 20), obj_player.y-40, "ui", obj_damage_indicator);
 	_ind.damage = round(_damage);
-	_ind.color = color_red;
+	if (obj_game_manager.damage_reduction > 0) _ind.color = color_blue;
+	else _ind.color = color_red;
 }
 
 // function to display a game notification
@@ -14,7 +15,6 @@ function show_notification_game(_message) {
 	}
 	var _noti = instance_create_layer(960, 350, "ui", obj_notification_game);
 	_noti.text = _message;
-	audio_play_sound(snd_notification, 0, false);
 }
 // function to display a powerup notification
 function show_notification_powerup(_powerup_type) {
@@ -39,5 +39,4 @@ function show_notification_powerup(_powerup_type) {
 		}
 		break;
 	}
-	audio_play_sound(snd_powerup, 0, false);
 }

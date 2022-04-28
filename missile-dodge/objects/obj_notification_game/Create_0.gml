@@ -5,5 +5,5 @@ text = "";
 // private variables
 can_lose_alpha = false;
 alpha = 1;
-alarm[0] = 180;
+alarm[0] = 360;
 

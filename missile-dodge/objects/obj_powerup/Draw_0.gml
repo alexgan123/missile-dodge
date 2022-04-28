@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_powerup, powerup_type, x, y + 8*sin(counter/20), 1, 1, 0, c_white, alpha);

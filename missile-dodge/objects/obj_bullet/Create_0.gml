@@ -1,4 +1,4 @@
-// public variables, can be set on instance creation
+// public variables
 tier = 0; 
 direction = 0;
 

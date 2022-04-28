@@ -1,14 +1,14 @@
-// public variables, can be set on instance creation
+// public variables
 missile_type = missileType.regular; // type of missile
-tier = 0;
-direction = 0;
+tier = 0; // tier, (red/blue/green)
+direction = 0; 
 
 // private variables
 image_index = tier;
-image_angle = direction - 90; // image angle should ALWAYS be direction - 90
+image_angle = direction - 90; // This should ALWAYS be true
 damage = 0; // how much damage missile does
-move_speed = 0; // speed of the missile
-fuse = 90; // how long before the exploding/scatter missile explodes
+move_speed = 0; // current speed of the missile
+fuse = 90; // for exploding/scatter missiles: how long before missile explodes
 
 // method that determines whether this object is outside the playing area
 function outside_playing_area() {
@@ -17,7 +17,7 @@ function outside_playing_area() {
 // method that destroys the missile and awards points
 function award_missile() {
 	obj_game_manager.score_ += 300 + (8*obj_game_manager.combo);
-	obj_game_manager.combo++;
+	obj_game_manager.combo += 1;
 	instance_destroy();
 }
 
@@ -32,6 +32,7 @@ function spawn_bullet(_tier, _direction) {
 // update the values for the private variables
 // should be done after initializing the missile's properties
 function update_properties() {
+	// scatter missiles have a random fuse
 	if (missile_type == missileType.exploding) {
 		fuse = 90;
 	}
@@ -54,7 +55,7 @@ function update_properties() {
 		break;
 		case missileType.speedy: {
 			sprite_index = spr_missile_speedy;
-			move_speed = 5;
+			move_speed = 4;
 		}
 		break;
 		case missileType.homing: {
@@ -69,12 +70,12 @@ function update_properties() {
 		break;
 		case missileType.scatter: {
 			sprite_index = spr_missile_scatter;
-			move_speed = 4;
+			move_speed = 6;
 		}
 		break;
 	}
-	move_speed *= (1 + (tier*0.1));
-	// if missile spawned from the top or bottom side, 
+	move_speed *= (1 + (tier*0.15));
+	// if missile spawned from the top or bottom side, then missile should move slower.
 	if ((y == 0) or (y == room_height)) {
 		move_speed = (move_speed * vertical_multiplier); 
 	}
