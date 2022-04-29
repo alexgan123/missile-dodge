@@ -2,6 +2,7 @@
 randomise();
 // set fullscreen
 window_set_size(display_get_width(), display_get_height());
+//window_set_fullscreen(true);
 
 // keyboard mapping allows player to move with wasd
 keyboard_set_map(ord("A"), vk_left);

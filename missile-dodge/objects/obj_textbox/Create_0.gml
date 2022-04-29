@@ -5,8 +5,8 @@ active_state = menuState.first_start;
 // Helper variables
 // whether the textbox responds to keyboard input or not
 selected = false;
-// max width of text inside text box
-max_width = 300;
+// max characters of text inside text box
+max_width = 16;
 // text currently drawn inside text box
 text = "";
 keyboard_string = "";

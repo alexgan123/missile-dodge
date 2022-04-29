@@ -22,7 +22,7 @@ score_approach = score_;
 combo = 0;
 
 // current damage reduction
-damage_reduction = 0.1;
+damage_reduction = 0;
 
 // current regen speed
 regen_speed = 0.08;

@@ -6,4 +6,4 @@ audio_group_load(SFX);
 update_volume();
 
 // audio testing mode
-audio_testing = true;
+audio_testing = false;

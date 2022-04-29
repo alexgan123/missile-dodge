@@ -10,6 +10,7 @@ function show_damage_indicator(_damage) {
 
 // function to display a game notification
 function show_notification_game(_message) {
+	audio_play_sound(snd_notification, 0, false);
 	with (obj_notification_game) {
 		instance_destroy();
 	}
