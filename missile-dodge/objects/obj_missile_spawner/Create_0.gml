@@ -4,7 +4,7 @@
 // Assume each level is 120 seconds long.
 time = 0;
 
-// methods for spawning missiles
+// the most general method for spawning a missile
 function spawn_missile(_type, _tier, _x, _y, _direction) {
 	// type: missileType of the missle to be spawned
 	// tier: color of missile to be spawned (integer from 0-2)
@@ -18,6 +18,39 @@ function spawn_missile(_type, _tier, _x, _y, _direction) {
 	// updates missile's private variables upon creation.
 	_missile.update_properties(); 
 }
+
+// convenient functions for spawning missiles
+
+// spawn regular missiles at the player's width or height.
+function spawn_missile_regular_left(_tier) {
+	spawn_missile(missileType.regular, _tier, 0, py, right);
+}
+function spawn_missile_regular_right(_tier) {
+	spawn_missile(missileType.regular, _tier, room_width, py, left);
+}
+function spawn_missile_regular_top(_tier) {
+	spawn_missile(missileType.regular, _tier, px, 0, down);
+}
+function spawn_missile_regular_bottom(_tier) {
+	spawn_missile(missileType.regular, _tier, px, room_height, up);
+}
+
+// spawn small missiles at the player's width or height, with a slight deviation.
+// Usually comes in bursts of 3
+function spawn_missile_small_left(_tier) {
+	spawn_missile(missileType.small, _tier, 0, py+random_range(-60, 60), right);
+}
+function spawn_missile_small_right(_tier) {
+	spawn_missile(missileType.small, _tier, room_width, py+random_range(-60, 60), left);
+}
+function spawn_missile_small_top(_tier) {
+	spawn_missile(missileType.small, _tier, px+random_range(-60, 60), 0, down);
+}
+function spawn_missile_small_bottom(_tier) {
+	spawn_missile(missileType.small, _tier, px+random_range(-60, 60), room_height, up);
+}
+
+
 
 function spawn_coin(_x, _y) {
 	// coins will spawn with a value depending on the current time.
