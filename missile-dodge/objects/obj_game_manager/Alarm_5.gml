@@ -1,0 +1,1 @@
+player_visible = true;

@@ -7,16 +7,16 @@ var _down = keyboard_check(vk_down);
 
 h_speed = move_speed * (_right - _left);
 v_speed = move_speed * (_down - _up);
-
-x += h_speed;
-y += v_speed;
-
+if (obj_game_manager.player_visible) {
+	x += h_speed;
+	y += v_speed;
+}
 // always be inside the room
 x = clamp(x, (sprite_width/2), room_width - (sprite_width/2));
 y = clamp(y, (sprite_height/2), room_height - (sprite_height/2));
 
 if (obj_game_manager.immune) {
-	image_alpha = 0.5;
+	image_alpha = 0.15;
 }
 else {
 	image_alpha = 1;

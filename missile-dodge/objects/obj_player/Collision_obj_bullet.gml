@@ -22,6 +22,9 @@ if (!obj_game_manager.immune) {
 	if (obj_game_manager.hp <= 0) {
 		audio_play_sound(snd_death, 0, false);
 		obj_game_manager.lives_ -= 1;
+		// invis for 1 sec
+		obj_game_manager.player_visible = false;
+		obj_game_manager.alarm[5] = 144;
 		
 		if (obj_game_manager.lives_ > 0) {
 			obj_game_manager.hp = obj_game_manager.hp_max;

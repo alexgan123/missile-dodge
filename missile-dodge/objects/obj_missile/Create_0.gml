@@ -10,6 +10,10 @@ damage = 0; // how much damage missile does
 move_speed = 0; // current speed of the missile
 fuse = 108; // for exploding/scatter missiles: how long before missile explodes
 
+// whether the missile has awarded points or not
+// this is to prevent missiles giving points twice
+awarded = false; 
+
 // method that determines whether this object is outside the playing area
 function outside_playing_area() {
 	return ((x < -50) or (x > room_width + 50) or (y < -50) or (y > room_height + 50));

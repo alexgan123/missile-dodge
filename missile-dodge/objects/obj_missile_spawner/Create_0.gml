@@ -2,7 +2,7 @@
 
 // time elapsed in the level.
 // Assume each level is 120 seconds long.
-time = 0;
+time = 0*s;
 
 // the most general method for spawning a missile
 function spawn_missile(_type, _tier, _x, _y, _direction) {

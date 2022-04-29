@@ -1,5 +1,6 @@
-if (outside_playing_area()) {
+if ((outside_playing_area()) and (!awarded)) {
 	award_missile();
+	awarded = true;
 }
 if (obj_game_manager.game_state == gameState.playing) {
 	speed = move_speed;
@@ -16,7 +17,10 @@ if (obj_game_manager.game_state == gameState.playing) {
 			spawn_bullet(tier, direction - 15);
 			spawn_bullet(tier, direction);
 			spawn_bullet(tier, direction + 15);
-			award_missile();
+			if (!awarded) {
+				award_missile();
+				awarded = true;
+			}
 		}
 	}
 	else if (missile_type == missileType.scatter) {
@@ -28,7 +32,10 @@ if (obj_game_manager.game_state == gameState.playing) {
 				spawn_bullet(tier, right);
 				spawn_bullet(tier, left);
 				spawn_bullet(tier, down);
-				award_missile();	
+				if (!awarded) {
+					award_missile();
+					awarded = true;
+				}
 			}
 		}
 	}

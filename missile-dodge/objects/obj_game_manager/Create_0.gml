@@ -31,6 +31,9 @@ regenerating = true;
 // whether player is currently immune to damage
 immune = false;
 
+// whether player is currently visible or not
+player_visible = true;
+
 health_bar_color = make_color_rgb(0, 204, 0); // color of the filled health bar
 health_bar_regen_flashing = false; // flash the health bar if regenerating quickly
 alarm[1] = 2;

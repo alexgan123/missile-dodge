@@ -2,7 +2,7 @@
 
 // function to display a damage indicator above the players head
 function show_damage_indicator(_damage) {
-	var _ind = instance_create_layer(obj_player.x+random_range(-20, 20), obj_player.y-40, "ui", obj_damage_indicator);
+	var _ind = instance_create_layer(obj_player.x+random_range(-20, 20), obj_player.y-50, "ui", obj_damage_indicator);
 	_ind.damage = round(_damage);
 	if (obj_game_manager.damage_reduction > 0) _ind.color = color_blue;
 	else _ind.color = color_red;
