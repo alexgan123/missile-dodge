@@ -4,88 +4,88 @@ time++;
 switch(obj_game_manager.level) {
 	case 1: {
 		switch (time) {
-			case 120: {
+			case 1*s: {
 				show_notification_game("Use Arrow Keys/WASD to avoid missiles");
 			}
 			break;
-			case 360: {
+			case 2*s: {
 				spawn_missile(missileType.regular, 0, 0, py, right);
 			}
 			break;
-			case 480: {
+			case 3*s: {
 				spawn_missile(missileType.regular, 0, 0, py, right);
 			}
 			break;
-			case 600: {
+			case 4*s: {
 				spawn_missile(missileType.regular, 0, 0, py, right);
 			}
 			break;
-			case 720: {
+			case 5*s: {
 				spawn_missile(missileType.regular, 0, px, 0, down);
 			}
 			break;
-			case 840: {
+			case 6*s: {
 				spawn_missile(missileType.regular, 0, px, 0, down);
 			}
 			break;
-			case 960: {
+			case 7*s: {
 				spawn_missile(missileType.regular, 0, px, 0, down);
 			}
 			break;
-			case 1080: {
+			case 8*s: {
 				spawn_missile(missileType.regular, 0, room_width, py, left);
 			}
 			break;
-			case 1200: {
+			case 9*s: {
 				spawn_missile(missileType.regular, 0, room_width, py, left);
 			}
 			break;
-			case 1320: {
+			case 10*s: {
 				spawn_missile(missileType.regular, 0, room_width, py, left);
 			}
 			break;
-			case 1440: {
+			case 11*s: {
 				spawn_missile(missileType.regular, 0, px, room_height, up);
 			}
 			break;
-			case 1560: {
+			case 12*s: {
 				spawn_missile(missileType.regular, 0, px, room_height, up);
 			}
 			break;
-			case 1680: {
+			case 13*s: {
 				spawn_missile(missileType.regular, 0, px, room_height, up);
 			}
 			break;
-			case 2040: {
+			case 14*s: {
 				spawn_missile(missileType.regular, 0, 0, py, right);
 			}
 			break;
-			case 2160: {
+			case 15*s: {
 				spawn_missile(missileType.regular, 1, 0, py, right);
 			}
 			break;
-			case 2280: {
+			case 16*s: {
 				spawn_missile(missileType.regular, 2, 0, py, right);
 			}
 			break;
-			case 2400: {
+			case 17*s: {
 				spawn_missile(missileType.regular, 0, room_width, py, left);
 			}
 			break;
-			case 2520: {
+			case 18*s: {
 				spawn_missile(missileType.regular, 1, room_width, py, left);
 			}
 			break;
-			case 2640: {
+			case 19*s: {
 				spawn_missile(missileType.regular, 2, room_width, py, left);
 			}
 			break;
-			case 2880: {
+			case 20*s: {
 				show_notification_game("Collect powerups to help you survive longer");	
 			}
 			break;
-			case 3000: {
-				spawn_powerup(powerupType.shield, 120, 120);
+			case 21*s: {
+				spawn_powerup(powerupType.shield, room_width*0.4, room_height*0.4);
 			}
 			break;
 			

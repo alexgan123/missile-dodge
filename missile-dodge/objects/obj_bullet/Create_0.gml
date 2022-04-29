@@ -18,5 +18,5 @@ function update_properties() {
 	image_index = tier;
 	image_angle = direction - 90;
 	damage = 200 + (tier)*100;
-	move_speed = 4 + (tier)*0.5;
+	move_speed = (10/3) + ((tier)*0.2);
 }

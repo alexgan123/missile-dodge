@@ -4,9 +4,6 @@ switch (obj_menu_manager.menu_state) {
 		draw_text_f(c_white, fa_center, fa_middle, calibri_20, 960, 350, "Enter your player name below:");
 	}
 	break;
-	case menuState.start: {
-	}
-	break;
 	case menuState.profile: {
 		draw_text_f(c_white, fa_center, fa_middle, calibri_25, 960, 250, global.player_name + "'s Profile");
 		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 850, 340, "Change Name");

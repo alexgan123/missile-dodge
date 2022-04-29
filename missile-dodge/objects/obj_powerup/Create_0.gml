@@ -4,7 +4,7 @@ powerup_type = powerupType.life;
 // private variables
 can_lose_alpha = false;
 alpha = 1;
-alarm[0] = 360;
+alarm[0] = 432; // powerup lasts 6 seconds in total
 counter = 0;
 
 // update the powerup's properties
@@ -37,13 +37,13 @@ function destroy_and_apply_effect() {
 		case powerupType.regen: {
 			part_particles_create(global.partsys, x, y, global.part_powerup_regen, 1);
 			obj_game_manager.regen_speed = 0.32;
-			obj_game_manager.alarm[0] = 960;
+			obj_game_manager.alarm[0] = 1152;
 		}
 		break;
 		case powerupType.shield: {
 			part_particles_create(global.partsys, x, y, global.part_powerup_shield, 1);
 			obj_game_manager.damage_reduction = 0.5;
-			obj_game_manager.alarm[2] = 960;
+			obj_game_manager.alarm[2] = 1152;
 		}
 		break;
 	}

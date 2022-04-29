@@ -7,4 +7,4 @@ color = c_white;
 // private variables
 can_lose_alpha = false;
 alpha = 1;
-alarm[0] = 30;
+alarm[0] = 36;

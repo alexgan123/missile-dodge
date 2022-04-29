@@ -11,4 +11,4 @@ x_min = x - 180; // mininum x position of slider head
 x_max = x + 180; // maximum x position of slider head
 
 // set the initial x position based off the data from save file
-alarm[0] = 1;
+alarm[0] = 2;

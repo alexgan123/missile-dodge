@@ -24,6 +24,8 @@ keyboard_set_map(ord("S"), vk_down);
 // global variable used to transfer level variable between rooms
 global.transfer = 1;
 
+// valid player name characters
+
 // options, highscore and other variables initialization
 ini_open("save.ini");
 

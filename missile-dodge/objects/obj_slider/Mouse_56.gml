@@ -8,7 +8,6 @@ if (active) {
 				ini_open("save.ini");
 				ini_write_real("options", "sfx", global.options_sfx);
 				ini_close();
-				x = x_min + 360*(global.options_sfx / 100);
 			}
 			break;
 			case sliderType.music: {
@@ -17,7 +16,6 @@ if (active) {
 				ini_open("save.ini");
 				ini_write_real("options", "music", global.options_music);
 				ini_close();
-				x = x_min + 360*(global.options_music / 100);
 			}
 			break;
 		}

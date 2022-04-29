@@ -4,7 +4,7 @@ if (outside_playing_area()) {
 if (obj_game_manager.game_state == gameState.playing) {
 	speed = move_speed;
 	if (missile_type == missileType.speedy) {
-		move_speed += 0.01;
+		move_speed += 0.02;
 	}
 	else if (missile_type == missileType.homing) {
 		direction = angle_approach(direction, point_direction(x, y, obj_player.x, obj_player.y), 0.08);
@@ -23,7 +23,7 @@ if (obj_game_manager.game_state == gameState.playing) {
 		fuse--;
 		if (fuse <= 0) {
 			speed = 0;
-			if (fuse <= -90) {
+			if (fuse <= -108) {
 				spawn_bullet(tier, up);
 				spawn_bullet(tier, right);
 				spawn_bullet(tier, left);

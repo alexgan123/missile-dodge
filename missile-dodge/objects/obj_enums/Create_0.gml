@@ -57,3 +57,5 @@ enum powerupType {
 	regen = 1, // gives regen for a few seconds
 	shield = 2 // gives damage reduction for a few seconds
 }
+
+

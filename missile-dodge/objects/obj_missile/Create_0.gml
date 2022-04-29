@@ -8,7 +8,7 @@ image_index = tier;
 image_angle = direction - 90; // This should ALWAYS be true
 damage = 0; // how much damage missile does
 move_speed = 0; // current speed of the missile
-fuse = 90; // for exploding/scatter missiles: how long before missile explodes
+fuse = 108; // for exploding/scatter missiles: how long before missile explodes
 
 // method that determines whether this object is outside the playing area
 function outside_playing_area() {
@@ -34,10 +34,10 @@ function spawn_bullet(_tier, _direction) {
 function update_properties() {
 	// scatter missiles have a random fuse
 	if (missile_type == missileType.exploding) {
-		fuse = 90;
+		fuse = 108;
 	}
 	else if (missile_type == missileType.scatter) {
-		fuse = random_range(120, 180);
+		fuse = round(random_range(288, 432));
 	}
 	image_index = tier;
 	image_angle = direction - 90;
@@ -45,32 +45,32 @@ function update_properties() {
 	switch (missile_type) {
 		case missileType.regular: { 
 			sprite_index = spr_missile;
-			move_speed = 4;
+			move_speed = (10/3);
 		}
 		break;
 		case missileType.small: {
 			sprite_index = spr_missile_small;
-			move_speed = 4.4;
+			move_speed = 3.6;
 		}
 		break;
 		case missileType.speedy: {
 			sprite_index = spr_missile_speedy;
-			move_speed = 4;
+			move_speed = 4.4;
 		}
 		break;
 		case missileType.homing: {
 			sprite_index = spr_missile_homing;
-			move_speed = 6;
+			move_speed = 7;
 		}
 		break;
 		case missileType.exploding: {
 			sprite_index = spr_missile_exploding;
-			move_speed = 4;
+			move_speed = (10/3);
 		}
 		break;
 		case missileType.scatter: {
 			sprite_index = spr_missile_scatter;
-			move_speed = 6;
+			move_speed = 7;
 		}
 		break;
 	}

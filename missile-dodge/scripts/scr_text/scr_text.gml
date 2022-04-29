@@ -36,45 +36,13 @@ function thousands(argument0) {
 	}
 }
 
-// trim spaces the beginning and end of a string. also trims extra spaces in between the string.
+// trims special characters and spaces from a string. Used for string input for the textbox
 function trim(str) {
-	var newstr = "";
-	var newnewstr = "";
-
-	var l = 1;
-	var r = string_length(str);
-
-	var lfound = false;
-	var rfound = false;
+	var new_string = "";
 	for (var i = 1; i <= string_length(str); i++) {
-		if (string_char_at(str, i) != " ") {
-			l = i;
-			lfound = true;
-			break;
-		}	
+		if (string_char_at(str, i) == "_") new_string += "_";
+		else new_string += string_lettersdigits(string_char_at(str, i));
 	}
-	for (var i = string_length(str); i >= 1; i--) {
-		if (string_char_at(str, i) != " ") {
-			r = i;
-			rfound = true;
-			break;
-		}	
-	}
-	if (lfound && rfound) {
-		var test = string_copy(str, l, r-l+1)
-		newstr = test;
-	}
-
-	for (var i = 1; i <= string_length(newstr); i++) {
-		if (string_char_at(newstr, i) != " ") {
-			newnewstr = newnewstr + string_char_at(newstr, i);
-		}
-		else {
-			if (string_char_at(newstr, i-1) != " ") {
-				newnewstr = newnewstr + string_char_at(newstr, i);
-			}
-		}
-	}
-	return newnewstr;
+	return new_string;
 }
 

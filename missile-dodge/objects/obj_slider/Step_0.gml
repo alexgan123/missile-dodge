@@ -7,10 +7,6 @@ else {
 	active = false;
 }
 
-value = (x - x_min)/360;
-value = clamp(value, 0, 1);
-percentage = round(value * 100);
-
 if (active) {
 	if (selected) {
 		x = clamp(mouse_x, x_min, x_max)
@@ -24,3 +20,7 @@ else {
 	image_blend = c_white;
 	selected = false;
 }
+
+value = (x - x_min)/360;
+value = clamp(value, 0, 1);
+percentage = round(value * 100);

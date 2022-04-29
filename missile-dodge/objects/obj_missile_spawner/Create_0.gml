@@ -41,3 +41,5 @@ function spawn_powerup(_type, _x, _y) {
 #macro up 90
 #macro left 180
 #macro down 270
+
+#macro s 144

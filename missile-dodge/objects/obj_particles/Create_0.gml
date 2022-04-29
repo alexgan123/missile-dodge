@@ -9,21 +9,21 @@ part_type_shape(global.part_powerup_life, pt_shape_ring);
 part_type_colour1(global.part_powerup_life, color_green);
 part_type_alpha2(global.part_powerup_life, 1, 0);
 part_type_size(global.part_powerup_life, 0, 0, 0.1, 0);
-part_type_life(global.part_powerup_life, 30, 30);
+part_type_life(global.part_powerup_life, 60, 60);
 
 global.part_powerup_shield = part_type_create();
 part_type_shape(global.part_powerup_shield, pt_shape_ring);
 part_type_colour1(global.part_powerup_shield, color_blue);
 part_type_alpha2(global.part_powerup_shield, 1, 0);
 part_type_size(global.part_powerup_shield, 0, 0, 0.1, 0);
-part_type_life(global.part_powerup_shield, 30, 30);
+part_type_life(global.part_powerup_shield, 60, 60);
 
 global.part_powerup_regen = part_type_create();
 part_type_shape(global.part_powerup_regen, pt_shape_ring);
 part_type_colour1(global.part_powerup_regen, color_red);
 part_type_alpha2(global.part_powerup_regen, 1, 0);
 part_type_size(global.part_powerup_regen, 0, 0, 0.1, 0);
-part_type_life(global.part_powerup_regen, 30, 30);
+part_type_life(global.part_powerup_regen, 60, 60);
 
 global.part_coin = part_type_create();
 part_type_shape(global.part_coin, pt_shape_ring);

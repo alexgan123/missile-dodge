@@ -10,7 +10,6 @@ if (active) {
 		}
 		break;
 	}
-	
 	draw_sprite(spr_slider_bar_empty, 0, x_min+180, y);
 	draw_self();
 }
