@@ -14,6 +14,7 @@ part_particles_create(global.partsys, x, y, global.part_coin, 1);
 
 // destroy the coin and apply bonuses
 function destroy_and_apply_effect() {
+	audio_play_sound(snd_coin, 0, false);
 	obj_game_manager.score_ += score_;
 	part_particles_create(global.partsys, x, y, global.part_coin, 1);
 	instance_destroy();

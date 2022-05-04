@@ -69,6 +69,11 @@ function spawn_powerup(_type, _x, _y) {
 // macro for player x and player y
 #macro px obj_player.x
 #macro py obj_player.y
+
+// macro for room width and room height
+#macro rw room_width
+#macro rh room_height
+
 // macro for 4 cardinal directions
 #macro right 0
 #macro up 90
