@@ -10,12 +10,14 @@ else {
 	else health_bar_color = make_color_rgb(255, 51, 51);
 }
 
-// determine the draw score color
-if (score_ > global.highscore[level]) {
-	draw_score_color = color_yellow;
-}
-else {
-	draw_score_color = c_white;
+// if the player's score goes above the current highscore, then set it to yellow
+if (draw_score_color != color_yellow) {
+	if (round(score_) > global.highscore[level]) {
+		draw_score_color = color_yellow;
+	}
+	else {
+		draw_score_color = c_white;
+	}
 }
 
 // 0 <= hp <= hpmax

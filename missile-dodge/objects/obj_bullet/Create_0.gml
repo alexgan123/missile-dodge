@@ -19,4 +19,6 @@ function update_properties() {
 	image_angle = direction - 90;
 	damage = 200 + (tier)*100;
 	move_speed = (10/3) + ((tier)*0.2);
+	audio_stop_sound(snd_split);
+	audio_play_sound(snd_split, 0, false);
 }

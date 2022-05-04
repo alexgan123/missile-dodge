@@ -21,4 +21,3 @@ if (obj_game_manager.immune) {
 else {
 	image_alpha = 1;
 }
-

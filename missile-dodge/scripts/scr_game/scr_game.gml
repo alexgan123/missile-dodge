@@ -43,3 +43,48 @@ function show_notification_powerup(_powerup_type) {
 		break;
 	}
 }
+
+// this code is used to apply damage to the player AND perform additional checks,
+// such as game over, losing a life, etc.
+// =====This function MUST be used to reduce the Player's HP.=====
+function player_take_hit(_damage) {
+	obj_game_manager.immune = true;
+	obj_game_manager.alarm[4] = 144;
+	
+	// deduct hp
+	obj_game_manager.hp -= _damage;
+	obj_game_manager.hp = clamp(obj_game_manager.hp, 0, obj_game_manager.hp_max);
+	
+	// reset combo
+	obj_game_manager.combo = 0;
+	
+	// disable regen for 1 sec
+	obj_game_manager.regenerating = false;
+	obj_game_manager.alarm[3] = 144;
+	
+	show_damage_indicator(_damage);
+	
+	// if player lost a life from this hit
+	if (obj_game_manager.hp <= 0) {
+		audio_play_sound(snd_death, 0, false);
+		obj_game_manager.lives_ -= 1;
+		obj_game_manager.player_visible = false;
+		obj_game_manager.alarm[5] = 144;
+		obj_game_manager.immune = true;
+		obj_game_manager.alarm[4] = 576;
+		part_particles_create(global.partsys, x, y, global.part_death, 1);
+		
+		// check if game is over
+		if (obj_game_manager.lives_ > 0) {
+			obj_game_manager.hp = obj_game_manager.hp_max;
+		}
+		else {
+			// you died. RIP
+			obj_game_manager.game_state = gameState.died;
+			update_and_save_highscore(false);
+		}
+	}
+	else {
+		audio_play_sound(snd_hurt, 0, false);
+	}
+}
