@@ -7,6 +7,7 @@ else {
 	active = false;
 }
 
+// set properties based on whether button is active
 if (active) {
 	// determine if button is pressable or not
 	if (button_type_ == buttonType.start_game) {
@@ -15,15 +16,13 @@ if (active) {
 	else {
 		pressable = true;	
 	}
+	
+	if (pressable) image_alpha = 1;
+	else image_alpha = 0.15;
 }
 else {
 	pressable = false;
-	image_index = 0;	
-}
-
-if (pressable) {
-	image_alpha = 1;
-}
-else {
+	image_index = 0;
 	image_alpha = 0.15;
 }
+

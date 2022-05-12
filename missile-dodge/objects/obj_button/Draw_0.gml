@@ -1,4 +1,4 @@
-// draw text only if the current state matches with the state of the button.
+// draw text and button only if button is active, otherwise draw nothing.
 if (active) {
 	draw_self();
 	var _offset = 0; 

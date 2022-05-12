@@ -1,5 +1,7 @@
 *.yyp
 *.yy
+*.txt
 missile-dodge/sounds/
 missile-dodge/sprites/
 missile-dodge/rooms/
+missile-dodge/objects/obj_data

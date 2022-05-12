@@ -28,7 +28,7 @@ if (tracking) {
 	
 	draw_set_font(calibri_30)
 	if (instance_count - instcnt != 0) draw_set_color(color_red)
-	draw_text(xx + 1400, yy + 60, string(instance_count))
+	draw_text(xx + 1400, yy + 60, "inst_cnt: " + string(instance_count))
 	
 	draw_set_font(calibri_15)
 	draw_set_color(c_white)
