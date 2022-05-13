@@ -1,22 +1,5 @@
 // object that controls the spawning of missiles at set times.
 
-// macro for player x and player y
-#macro px obj_player.x
-#macro py obj_player.y
-
-// macro for room width and room height
-#macro rw room_width
-#macro rh room_height
-
-// macro for 4 cardinal directions
-#macro right 0
-#macro up 90
-#macro left 180
-#macro down 270
-
-// macro for how many frames are in 1 second
-#macro s 144
-
 // time elapsed in the level.
 // Assume each level is 120 seconds long.
 time = 0*s;

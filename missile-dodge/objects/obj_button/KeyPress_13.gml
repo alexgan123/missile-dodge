@@ -1,3 +1,3 @@
-if (active) and (pressable) {
-	if (enter_activated) execute_click_function();
+if (active) and (pressable) and (enter_activated) {
+	execute_click_function();	
 }

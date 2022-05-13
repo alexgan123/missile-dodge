@@ -9,6 +9,10 @@ if (active) {
 			draw_text_f(c_white, fa_center, fa_middle, calibri_20, x_min+180, y-50, "Music: " + string(percentage) + "%");
 		}
 		break;
+		case sliderType.fps_: {
+			draw_text_f(c_white, fa_center, fa_middle, calibri_20, x_min+180, y-50, "Frames per second: " + string(fps_value));
+		}
+		break;
 	}
 	draw_sprite(spr_slider_bar_empty, 0, x_min+180, y);
 	draw_self();

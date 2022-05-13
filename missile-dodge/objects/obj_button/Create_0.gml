@@ -5,8 +5,10 @@ sprite_index = spr_button_blue; // color and size of the button
 button_type_ = buttonType.change_menu_state; // what the button does
 // which state the button is active on, can be set to a menuState or a gameState.
 active_state = menuState.first_start; 
-enter_activated = false; // pressing enter will execute button's function
-escape_activated = false; // pressing escape will execute the button's function
+
+// Pressing ENTER or SHIFT can trigger the button's onClick functions.
+enter_activated = false;
+escape_activated = false;
 
 // Button's sub properties
 
@@ -24,7 +26,7 @@ level = 1;
 active = true; // whether button is active (can be interacted with at all).
 pressable = true; // whether button can be clicked down, will be transparent if it cannot be clicked down.
 
-// do what the button is supposed to after it gets clicked.
+// simply do what the button is supposed to after it gets clicked.
 // this function does not change the image_index or play a sound.
 function execute_click_function() {
 	switch (button_type_) {
@@ -55,7 +57,6 @@ function execute_click_function() {
 						ini_close();
 							
 						// change the menu state
-						// NOTE: this shouldn't change the menu state if we are on the OPTIONS menu state.
 						obj_menu_manager.menu_state = destination_state;
 					}
 				}
@@ -63,7 +64,6 @@ function execute_click_function() {
 		}
 		break;
 		case buttonType.exit_game: {
-			// exit game
 			game_end();
 		}
 		break;

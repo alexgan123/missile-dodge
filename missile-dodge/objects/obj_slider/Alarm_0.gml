@@ -8,4 +8,7 @@ switch(slider_type) {
 	case sliderType.music:
 	x = x_min + 360*(global.options_music / 100);
 	break;
+	case sliderType.fps_:
+	x = x_min + 360*((global.options_fps - 60) / 180); 
+	break;
 }

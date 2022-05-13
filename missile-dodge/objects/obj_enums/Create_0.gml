@@ -34,7 +34,8 @@ enum buttonType {
 // define the different types of sliders
 enum sliderType {
 	sfx = 0,
-	music = 1
+	music = 1,
+	fps_ = 2
 }
 
 // define different types of missiles
@@ -58,4 +59,32 @@ enum powerupType {
 	shield = 2 // gives damage reduction for a few seconds
 }
 
+// MACROS
+// color macros
+#macro color_red make_colour_rgb(255, 80, 80)
+#macro color_orange make_colour_rgb(255, 153, 51)
+#macro color_yellow make_colour_rgb(255, 255, 102)
+#macro color_green make_colour_rgb(102, 255, 102)
+#macro color_blue make_colour_rgb(102, 178, 255)
+#macro color_purple make_colour_rgb(255, 51, 255)
+
+// speed multiplier for vertical missiles
+#macro vertical_multiplier 0.5625
+
+// macro for player x and player y
+#macro px obj_player.x
+#macro py obj_player.y
+
+// macro for room width and room height
+#macro rw room_width
+#macro rh room_height
+
+// macro for 4 cardinal directions
+#macro right 0
+#macro up 90
+#macro left 180
+#macro down 270
+
+// macro for how many frames are in 1 second
+#macro s 144
 

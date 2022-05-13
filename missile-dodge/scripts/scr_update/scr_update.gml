@@ -4,6 +4,11 @@ function update_volume() {
 	audio_group_set_gain(SFX, global.options_sfx/100, 0);
 }
 
+// update the game speed in game to match the global.options_fps
+function update_game_speed() {
+	game_set_speed(global.options_fps, gamespeed_fps);
+}
+
 // update the global.highscore variable and save
 // OPTIONALLY increments the global.level variable so the user can advance to the next level. 
 function update_and_save_highscore(_increment_game_level = false) {

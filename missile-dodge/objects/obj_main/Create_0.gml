@@ -10,17 +10,6 @@ keyboard_set_map(ord("D"), vk_right);
 keyboard_set_map(ord("W"), vk_up);
 keyboard_set_map(ord("S"), vk_down);
 
-// color macros
-#macro color_red make_colour_rgb(255, 80, 80)
-#macro color_orange make_colour_rgb(255, 153, 51)
-#macro color_yellow make_colour_rgb(255, 255, 102)
-#macro color_green make_colour_rgb(102, 255, 102)
-#macro color_blue make_colour_rgb(102, 178, 255)
-#macro color_purple make_colour_rgb(255, 51, 255)
-
-// speed multiplier for vertical missiles
-#macro vertical_multiplier 0.5625
-
 // global variable used to transfer level variable between rooms
 global.transfer = 1;
 
@@ -39,6 +28,9 @@ if (!ini_key_exists("options", "particles")) {
 }
 if (!ini_key_exists("options", "damage_indicators")) {
 	ini_write_real("options", "damage_indicators", true);
+}
+if (!ini_key_exists("options", "fps")) {
+	ini_write_real("options", "fps", 144);
 }
 
 // write default game level to ini file
@@ -83,6 +75,7 @@ global.options_sfx = ini_read_real("options", "sfx", 100); // how loud sound eff
 global.options_music = ini_read_real("options", "music", 100); // how loud music will be (0-100%)
 global.options_particles = ini_read_real("options", "particles", true); // whether particle effects are displayed
 global.options_damage_indicators = ini_read_real("options", "damage_indicators", true); // whether damage numbers show up when player gets hit
+global.options_fps = ini_read_real("options", "fps", 144);
 
 global.game_level = ini_read_real("game", "level", 1); // highest level unlocked
 
@@ -100,3 +93,6 @@ global.player_icon = ini_read_real("player", "icon", 0); // currently selected p
 global.player_name = ini_read_string("player", "name", ""); // player name
 
 ini_close();
+
+// update the game FPS to match global.options_fps
+update_game_speed();

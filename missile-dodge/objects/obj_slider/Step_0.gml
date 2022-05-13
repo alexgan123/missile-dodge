@@ -24,3 +24,24 @@ else {
 value = (x - x_min)/360;
 value = clamp(value, 0, 1);
 percentage = round(value * 100);
+fps_value = round(((value*180) + 60) / 12) * 12;
+
+// Checks every frame if the current state changes.
+// If the current state changes, then immediately update global.options variables and the ini
+// with the value currently held in slider.
+
+if (instance_exists(obj_menu_manager)) {
+	_curmenu = obj_menu_manager.menu_state;	
+}
+if (_curmenu != _prevmenu) {
+	slider_apply_value();
+}
+_prevmenu = _curmenu;
+
+if (instance_exists(obj_game_manager)) {
+	_curgame = obj_game_manager.game_state;	
+}
+if (_curgame != _prevgame) {
+	slider_apply_value();
+}
+_prevgame = _curgame;
