@@ -4,6 +4,3 @@ part_type_destroy(global.part_powerup_regen);
 part_type_destroy(global.part_powerup_shield);
 part_type_destroy(global.part_coin);
 part_type_destroy(global.part_death);
-part_type_destroy(global.part_missile_red);
-part_type_destroy(global.part_missile_blue);
-part_type_destroy(global.part_missile_green);

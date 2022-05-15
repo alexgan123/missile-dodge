@@ -8,11 +8,12 @@ image_index = tier;
 image_angle = direction - 90; // This should ALWAYS be true
 damage = 0; // how much damage missile does
 move_speed = 0; // current speed of the missile
-fuse = 108; // for exploding/scatter missiles: how long before missile splits off into bullets.
+fuse = 1; // for exploding/scatter missiles: how long before missile splits off into bullets.
 
 flame_length_max = 2; // max length
-flame_length_min = 1.9; // min length
+flame_length_min = 1.8; // min length
 flame_width = 1; // how wide the flame is
+
 flame_length = flame_length_max; // current flame length
 flame_increasing = false;
 
@@ -46,12 +47,12 @@ function spawn_bullet(_tier, _direction) {
 // update the values for the private variables
 // should be done after initializing the missile's properties
 function update_properties() {
-	// determine the fuse amount
+	// determine the fuse amount in seconds
 	if (missile_type == missileType.exploding) {
-		fuse = 108;
+		fuse = 0.75;
 	}
 	else if (missile_type == missileType.scatter) {
-		fuse = round(random_range(288, 432));
+		fuse = round(random_range(2, 3));
 	}
 	// determine the color of the missile
 	image_index = tier;
@@ -63,12 +64,12 @@ function update_properties() {
 	switch (missile_type) {
 		case missileType.regular: { 
 			sprite_index = spr_missile;
-			move_speed = (10/3);
+			move_speed = 480;
 		}
 		break;
 		case missileType.small: {
 			sprite_index = spr_missile_small;
-			move_speed = 3.6;
+			move_speed = 515;
 			flame_width = 0.5;
 			flame_length_max = 1.5;
 			flame_length_min = 1.4;
@@ -77,32 +78,28 @@ function update_properties() {
 		break;
 		case missileType.speedy: {
 			sprite_index = spr_missile_speedy;
-			move_speed = 3;
+			move_speed = 700;
 			audio_stop_sound(snd_speedy);
 			audio_play_sound(snd_speedy, 0, false);
-			flame_width = 0;
-			flame_length_max = 0;
-			flame_length_min = 0;
-			flame_length = flame_length_max;
 		}
 		break;
 		case missileType.homing: {
 			sprite_index = spr_missile_homing;
-			move_speed = 7;
+			move_speed = 576;
 			audio_stop_sound(snd_homing);
 			audio_play_sound(snd_homing, 0, false);
 		}
 		break;
 		case missileType.exploding: {
 			sprite_index = spr_missile_exploding;
-			move_speed = (10/3);
+			move_speed = 480;
 			audio_stop_sound(snd_explosive);
 			audio_play_sound(snd_explosive, 0, false);
 		}
 		break;
 		case missileType.scatter: {
 			sprite_index = spr_missile_scatter;
-			move_speed = 7;
+			move_speed = 480;
 			audio_stop_sound(snd_scatter);
 			audio_play_sound(snd_scatter, 0, false);
 		}

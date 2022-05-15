@@ -4,7 +4,7 @@ score_ = 0; // score that the coin gives
 // private variables
 can_lose_alpha = false;
 alpha = 1;
-alarm[0] = 432; // coins last for 6 seconds in total
+alarm0 = 3; // coins last for 6 seconds in total
 
 xscale = 1;
 flag = false;

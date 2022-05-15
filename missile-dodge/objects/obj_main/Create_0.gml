@@ -4,14 +4,17 @@ randomise();
 window_set_size(display_get_width(), display_get_height());
 //window_set_fullscreen(true);
 
-// keyboard mapping allows player to move with wasd
+// keyboard mapping allows player to move with WASD
 keyboard_set_map(ord("A"), vk_left);
 keyboard_set_map(ord("D"), vk_right);
 keyboard_set_map(ord("W"), vk_up);
 keyboard_set_map(ord("S"), vk_down);
 
-// global variable used to transfer level variable between rooms
-global.transfer = 1;
+// the level that was inputted in the level select screen of rm_menu.
+global.rm_menu_level_input = 1;
+
+// delta time variable, used to increment values every step
+global.delta = delta_time/1000000;
 
 // options, highscore and other variables initialization
 ini_open("save.ini");
@@ -39,7 +42,7 @@ if (!ini_key_exists("game", "level")) {
 }
 
 // write default highscores to ini file
-for (var i = 1; i <= 10; i++) {
+for (var i = 1; i <= 15; i++) {
 	if (!ini_key_exists("highscore", string(i))) {
 		ini_write_real("highscore", string(i), 0);
 	}
@@ -79,7 +82,7 @@ global.options_fps = ini_read_real("options", "fps", 144);
 
 global.game_level = ini_read_real("game", "level", 1); // highest level unlocked
 
-for (var i = 1; i <= 10; i++) {
+for (var i = 1; i <= 15; i++) {
 	global.highscore[i] = ini_read_real("highscore", string(i), 0); // highscore for each level
 }
 

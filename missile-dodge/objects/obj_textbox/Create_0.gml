@@ -14,14 +14,18 @@ keyboard_string = "";
 prompt = "";
 can_lose_alpha = true;
 alpha = 0;
+alarm1 = 0;
+
 // line blinking for the text box
 line = true;
-alarm[0] = 50;
+alarm0 = 0.35;
+
 active = true; // whether textbox is currently active
+
 // method that sets a new prompt for the textbox
 function new_prompt(str) {
 	prompt = str;
 	can_lose_alpha = false;
 	alpha = 1;
-	alarm[1] = 240;
+	alarm1 = 1.6;
 }

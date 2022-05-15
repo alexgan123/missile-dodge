@@ -68,7 +68,7 @@ function execute_click_function() {
 		}
 		break;
 		case buttonType.start_game: {
-			global.transfer = level;
+			global.rm_menu_level_input = level;
 			room_goto(rm_game);
 		}
 		break;

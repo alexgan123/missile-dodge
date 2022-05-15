@@ -1,4 +1,4 @@
-move_speed = (10/3);
+move_speed = 480;
 h_speed = 0;
 v_speed = 0;
 

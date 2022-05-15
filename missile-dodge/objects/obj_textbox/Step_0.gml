@@ -7,14 +7,22 @@ else {
 	active = false;
 }
 
-// if can_lose_alpha, then make the text slowly fade out
+if (alarm1 > 0) alarm1 -= global.delta;
+else can_lose_alpha = true;
 if (can_lose_alpha) {
 	if (alpha > 0) {
-		alpha -= (1/120);
+		alpha -= 1.2*global.delta;
 	}
 	else {
 		prompt = "";	
 	}
+}
+
+// line blinking
+if (alarm0 > 0) alarm0 -= global.delta;
+if (alarm0 <= 0) {
+	line = !line;
+	alarm0 = 0.35;
 }
 
 // if the current menu state is not the correct one, 
@@ -25,5 +33,5 @@ if (!active) {
 	prompt = "";
 	can_lose_alpha = true;
 	alpha = 0;
-	alarm[1] = -1;
+	alarm1 = 0;
 }

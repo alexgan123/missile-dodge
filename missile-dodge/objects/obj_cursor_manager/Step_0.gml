@@ -7,6 +7,6 @@ else if (instance_exists(obj_game_manager)) {
 		window_set_cursor(cr_none); // menu screen should hide cursor when playing
 	}
 	else {
-		window_set_cursor(cr_default);
+		window_set_cursor(cr_default); 
 	}
 }

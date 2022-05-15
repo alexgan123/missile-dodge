@@ -10,7 +10,7 @@ if (obj_music.audio_testing) draw_text_f(color_blue, fa_right, fa_bottom, calibr
 
 //draw_text_f(c_white, fa_left, fa_bottom, calibri_25, 200, 1060, string(instance_count) + " instance_count");
 
-
+/*
 draw_text_f(c_white, fa_left, fa_bottom, calibri_15, 20, 1010, "sfx music particles dmgind fps " + 
 string(global.options_sfx) + " " + string(global.options_music) + " " + 
 string(global.options_particles) + " " + string(global.options_damage_indicators) + " "
@@ -20,7 +20,7 @@ draw_text_f(c_white, fa_left, fa_bottom, calibri_15, 20, 970, "game_level " +
 string(global.game_level));
 
 var _hs = "";
-for (var i = 1; i <= 10; i++) {
+for (var i = 1; i <= 15; i++) {
 	_hs += string(global.highscore[i]) + " ";
 }
 

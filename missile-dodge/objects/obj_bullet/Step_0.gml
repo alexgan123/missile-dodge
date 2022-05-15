@@ -4,7 +4,7 @@ if (outside_playing_area()) {
 	instance_destroy();
 }
 if (obj_game_manager.game_state == gameState.playing) {
-	speed = move_speed;	
+	speed = move_speed * global.delta;	
 }
 else {
 	speed = 0;	

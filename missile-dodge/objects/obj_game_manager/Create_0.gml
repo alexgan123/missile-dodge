@@ -3,7 +3,7 @@
 // the current game state
 game_state = gameState.playing;
 // level that is currently playing
-level = global.transfer;
+level = global.rm_menu_level_input;
 
 // current health (real number)
 hp = 500;
@@ -21,11 +21,17 @@ score_approach = score_;
 // current combo
 combo = 0;
 
+// specify the value of each coin for each level
+for (var i = 1; i <= 15; i++) {
+	coin_value[i] = 6250; // default coin value
+}
+
+
 // current damage reduction
 damage_reduction = 0;
 
 // current regen speed
-regen_speed = 0.08;
+regen_speed = 12;
 // whether player is currently regenerating
 regenerating = true;
 // whether player is currently immune to damage
@@ -36,7 +42,15 @@ player_visible = true;
 
 health_bar_color = make_color_rgb(0, 204, 0); // color of the filled health bar
 health_bar_regen_flashing = false; // flash the health bar if regenerating quickly
-alarm[1] = 2;
 
 // color of the drawn score
 draw_score_color = c_white;
+
+// alarms
+alarm0 = 0;
+alarm1 = 0;
+alarm2 = 0;
+alarm3 = 0;
+alarm4 = 0;
+alarm5 = 0;
+

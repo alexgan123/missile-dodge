@@ -1,9 +1,14 @@
 // object that controls the spawning of missiles at set times.
 
 // time elapsed in the level.
-// Assume each level is 120 seconds long.
-time = 0*s;
+time = 0;
+// time on the previous frame
+time_p = 0; 
 
+// check when "time" variable passes a certain value for the first time.
+function t(_time) {
+	return (time >= _time) and (time_p < _time);
+}
 // the most general method for spawning a missile
 function spawn_missile(_type, _tier, _x, _y, _direction) {
 	// type: missileType of the missle to be spawned
@@ -19,9 +24,8 @@ function spawn_missile(_type, _tier, _x, _y, _direction) {
 	_missile.update_properties(); 
 }
 
-// convenient functions for spawning missiles
+// convenient functions for spawning missiles (use these)
 
-#region
 // spawn regular missiles at the player's width or height.
 function spawn_missile_regular_left(_tier) {
 	spawn_missile(missileType.regular, _tier, 0, py, right);
@@ -82,17 +86,11 @@ function spawn_missile_speedy_fixed(_tier, _x_0_to_1, _y_0_to_1) {
 	var _dir = point_direction(_x, _y, px, py);
 	spawn_missile(missileType.speedy, _tier, _x, _y, _dir);
 }
-
-
-
-
-
-#endregion
-
-// spawn a coin at (x, y). Coins that spawn later are more valuable.
+	
+// spawn a coin at (x, y). Coins are worth a constant amount of points for each level.
 function spawn_coin(_x_0_to_1, _y_0_to_1) {
 	var _coin = instance_create_layer(_x_0_to_1*rw, _y_0_to_1*rh, "pickups", obj_coin);
-	_coin.score_ = time;
+	_coin.score_ = obj_game_manager.coin_value[obj_game_manager.level];
 }
 
 // type: powerupType of powerup to be spawned

@@ -1,4 +1,4 @@
-// creates all the enums that are used throughout the game
+// creates all the enums/constants that are used throughout the game
 
 // current menu that the player is on
 enum menuState {
@@ -20,12 +20,12 @@ enum gameState {
 
 // define the different types of buttons
 enum buttonType {
-	change_menu_state = 0, // used to move around menus
+	change_menu_state = 0, // used to move around menus.
 	exit_game = 1, // exits the game
 	toggle_damage_indicators = 2, // options - toggle damage indicators
 	toggle_particles = 3, // options - toggle particles
 	change_player_name = 4, // change player name
-	start_game = 5, // main menu - start new game
+	start_game = 5, // main menu - start new game (level select button)
 	continue_ = 6, // continue a paused game
 	restart = 7, // restart a paused game
 	back_to_menu = 8 // go back to menu
@@ -39,10 +39,6 @@ enum sliderType {
 }
 
 // define different types of missiles
-// regular and small missiles travel in a straight line without changing speed.
-// speedy missiles travel in straight line and accelerate.
-// exploding missiles quickly burst into projectiles that fan out
-// scatter missiles burst into 4 projectiles 
 enum missileType {
 	regular = 0,
 	small = 1,
@@ -84,7 +80,3 @@ enum powerupType {
 #macro up 90
 #macro left 180
 #macro down 270
-
-// macro for how many frames are in 1 second
-#macro s 144
-
