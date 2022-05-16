@@ -4,9 +4,21 @@ function update_volume() {
 	audio_group_set_gain(SFX, global.options_sfx/100, 0);
 }
 
-// update the game speed in game to match the global.options_fps
+// update the game speed in game to match the value of global.options_fps
 function update_game_speed() {
 	game_set_speed(global.options_fps, gamespeed_fps);
+}
+
+// update the window_fullscreen in game to match the value of global.options_fullscreen
+function update_fullscreen() {
+	window_set_fullscreen(global.options_fullscreen);
+	window_set_size(display_get_width()*0.8, display_get_height()*0.8);
+	obj_main.alarm[0] = 1;
+}
+
+// update the vsync setting in game to match the value of global.options_vsync
+function update_vsync() {
+	display_reset(0, global.options_vsync);	
 }
 
 // update the global.highscore variable and save

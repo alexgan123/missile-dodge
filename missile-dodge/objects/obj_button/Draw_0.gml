@@ -18,6 +18,14 @@ if (active) {
 			draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-60, (global.highscore[level] > 0 ? thousands(global.highscore[level]) : ""));
 		}
 		break;
+		case buttonType.toggle_fullscreen: {
+			draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-70, "Fullscreen: " + (global.options_fullscreen ? "Enabled" : "Disabled"));
+		}
+		break;
+		case buttonType.toggle_vsync: {
+			draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-70, "VSync: " + (global.options_vsync ? "Enabled" : "Disabled"));
+		}
+		break;
 	}
 }
 

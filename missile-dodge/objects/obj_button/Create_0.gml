@@ -88,6 +88,22 @@ function execute_click_function() {
 			ini_close();
 		}
 		break;
+		case buttonType.toggle_fullscreen: {
+			global.options_fullscreen = !global.options_fullscreen;
+			update_fullscreen();
+			ini_open("save.ini");
+			ini_write_real("options", "fullscreen", global.options_fullscreen);
+			ini_close();
+		}
+		break;
+		case buttonType.toggle_vsync: {
+			global.options_vsync = !global.options_vsync;
+			update_vsync();
+			ini_open("save.ini");
+			ini_write_real("options", "vsync", global.options_vsync);
+			ini_close();
+		}
+		break;
 		case buttonType.continue_: {
 			if (instance_exists(obj_game_manager)) {
 				obj_game_manager.game_state = gameState.playing;	

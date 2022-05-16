@@ -20,15 +20,17 @@ enum gameState {
 
 // define the different types of buttons
 enum buttonType {
-	change_menu_state = 0, // used to move around menus.
-	exit_game = 1, // exits the game
-	toggle_damage_indicators = 2, // options - toggle damage indicators
-	toggle_particles = 3, // options - toggle particles
-	change_player_name = 4, // change player name
-	start_game = 5, // main menu - start new game (level select button)
-	continue_ = 6, // continue a paused game
-	restart = 7, // restart a paused game
-	back_to_menu = 8 // go back to menu
+	change_menu_state, // used to move around menus.
+	exit_game, // exits the game
+	toggle_damage_indicators, // options - toggle damage indicators
+	toggle_particles, // options - toggle particles
+	toggle_fullscreen, 
+	toggle_vsync,
+	change_player_name, // change player name
+	start_game, // main menu - start new game (level select button)
+	continue_, // continue a paused game
+	restart, // restart a paused game
+	back_to_menu // go back to menu
 }
 
 // define the different types of sliders

@@ -1,8 +1,5 @@
 // randomise the game
 randomise();
-// set fullscreen
-window_set_size(display_get_width(), display_get_height());
-//window_set_fullscreen(true);
 
 // keyboard mapping allows player to move with WASD
 keyboard_set_map(ord("A"), vk_left);
@@ -34,6 +31,12 @@ if (!ini_key_exists("options", "damage_indicators")) {
 }
 if (!ini_key_exists("options", "fps")) {
 	ini_write_real("options", "fps", 144);
+}
+if (!ini_key_exists("options", "fullscreen")) {
+	ini_write_real("options", "fullscreen", false);
+}
+if (!ini_key_exists("options", "vsync")) {
+	ini_write_real("options", "vsync", false);
 }
 
 // write default game level to ini file
@@ -79,6 +82,9 @@ global.options_music = ini_read_real("options", "music", 100); // how loud music
 global.options_particles = ini_read_real("options", "particles", true); // whether particle effects are displayed
 global.options_damage_indicators = ini_read_real("options", "damage_indicators", true); // whether damage numbers show up when player gets hit
 global.options_fps = ini_read_real("options", "fps", 144);
+global.options_fullscreen = ini_read_real("options", "fullscreen", false);
+global.options_vsync = ini_read_real("options", "vsync", false);
+
 
 global.game_level = ini_read_real("game", "level", 1); // highest level unlocked
 
@@ -97,5 +103,7 @@ global.player_name = ini_read_string("player", "name", ""); // player name
 
 ini_close();
 
-// update the game FPS to match global.options_fps
+// Apply the effect of various options in game
 update_game_speed();
+update_fullscreen();
+update_vsync();
