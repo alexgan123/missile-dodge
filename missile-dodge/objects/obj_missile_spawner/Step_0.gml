@@ -314,14 +314,9 @@ switch(obj_game_manager.level) {
 		if t(115) {spawn_missile_regular_right(2)} 
 		if t(120) {obj_game_manager.game_state = gameState.victory;
 			update_and_save_highscore(true)} 
-		
-		
 	}
 	break;
-	case 3: {
-		
-	}
-	break;
+
 }
 
 time_p = time;
