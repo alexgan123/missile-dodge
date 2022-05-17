@@ -316,6 +316,10 @@ switch(obj_game_manager.level) {
 			update_and_save_highscore(true)} 
 	}
 	break;
+	case 3: {
+		
+	}
+	break;
 
 }
 

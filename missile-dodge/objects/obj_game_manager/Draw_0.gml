@@ -21,6 +21,10 @@ switch (game_state) {
 		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 960, 160, "Paused");
 	}
 	break;
+	case gameState.options: {
+		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 960, 160, "Options");
+	}
+	break;
 	case gameState.died: {
 		draw_text_f(c_white, fa_center, fa_middle, calibri_25_bold, 960, 160, "Game Over");
 		draw_text_f(c_white, fa_center, fa_middle, calibri_20, 960, 550, "Level " + string(level));

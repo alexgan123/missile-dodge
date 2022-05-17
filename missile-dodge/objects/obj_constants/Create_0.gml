@@ -12,10 +12,11 @@ enum menuState {
 
 // current game state that the player is on
 enum gameState {
-	playing = 0, // currently playing through the game
-	paused = 1, // game is paused
-	died = 2, // player ran out of lives
-	victory = 3 // player survived until the end
+	playing, // currently playing through the game
+	paused, // game is paused
+	options, // game options menu
+	died, // player ran out of lives
+	victory, // player survived until the end
 }
 
 // define the different types of buttons
@@ -28,7 +29,7 @@ enum buttonType {
 	toggle_vsync,
 	change_player_name, // change player name
 	start_game, // main menu - start new game (level select button)
-	continue_, // continue a paused game
+	change_game_state, // used to move around game menus.
 	restart, // restart a paused game
 	back_to_menu // go back to menu
 }

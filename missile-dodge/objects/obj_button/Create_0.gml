@@ -104,9 +104,9 @@ function execute_click_function() {
 			ini_close();
 		}
 		break;
-		case buttonType.continue_: {
+		case buttonType.change_game_state: {
 			if (instance_exists(obj_game_manager)) {
-				obj_game_manager.game_state = gameState.playing;	
+				obj_game_manager.game_state = destination_state;	
 			}
 		}
 		break;
