@@ -107,3 +107,6 @@ ini_close();
 update_game_speed();
 update_fullscreen();
 update_vsync();
+
+// send data
+data_send_login();

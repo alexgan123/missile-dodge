@@ -55,7 +55,8 @@ function execute_click_function() {
 						ini_open("save.ini");
 						ini_write_string("player", "name", global.player_name);
 						ini_close();
-							
+						
+						data_send_login();
 						// change the menu state
 						obj_menu_manager.menu_state = destination_state;
 					}
