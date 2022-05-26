@@ -1,6 +1,9 @@
 // randomise the game
 randomise();
 
+// set utc time
+date_set_timezone(timezone_utc);
+
 // keyboard mapping allows player to move with WASD
 keyboard_set_map(ord("A"), vk_left);
 keyboard_set_map(ord("D"), vk_right);

@@ -3,7 +3,7 @@
 // time elapsed in the level.
 time = 0;
 // time on the previous frame
-time_p = 0; 
+time_p = time; 
 
 // check when "time" variable passes a certain value for the first time.
 function t(_time) {
@@ -73,7 +73,20 @@ function spawn_missile_small_bottom(_tier) {
 	spawn_missile(missileType.small, _tier, px+random_range(-60, 60), room_height, up);
 }
 
-// speedy missile functions
+function spawn_missile_small_fixed(_tier, _x_0_to_1, _y_0_to_1, _direct = false, _angle_deviation = 0) { 
+	var _x = _x_0_to_1*rw;
+	var _y = _y_0_to_1*rh;
+	var _dir = right;
+	if (_direct) _dir = point_direction(_x, _y, px, py) + _angle_deviation;
+	else if (_x_0_to_1 == 0) _dir = right;
+	else if (_x_0_to_1 == 1) _dir = left;
+	else if (_y_0_to_1 == 0) _dir = down;
+	else if (_y_0_to_1 == 1) _dir = up;
+	
+	spawn_missile(missileType.small, _tier, _x, _y, _dir);
+}
+
+// speedy missile functions - always directed at player
 function spawn_missile_speedy_left(_tier) {
 	spawn_missile(missileType.speedy, _tier, 0, py, right);
 }
@@ -86,6 +99,21 @@ function spawn_missile_speedy_fixed(_tier, _x_0_to_1, _y_0_to_1) {
 	var _dir = point_direction(_x, _y, px, py);
 	spawn_missile(missileType.speedy, _tier, _x, _y, _dir);
 }
+	
+// explosive missile functions - always directed at player
+function spawn_missile_exploding_left(_tier) {
+	spawn_missile(missileType.exploding, _tier, 0, py, right);
+}
+function spawn_missile_exploding_right(_tier) {
+	spawn_missile(missileType.exploding, _tier, rw, py, left);
+}
+function spawn_missile_exploding_fixed(_tier, _x_0_to_1, _y_0_to_1) {
+	var _x = _x_0_to_1*rw;
+	var _y = _y_0_to_1*rh;
+	var _dir = point_direction(_x, _y, px, py);
+	spawn_missile(missileType.exploding, _tier, _x, _y, _dir);
+}
+
 	
 // spawn a coin at (x, y). Coins are worth a constant amount of points for each level.
 function spawn_coin(_x_0_to_1, _y_0_to_1) {

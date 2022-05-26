@@ -78,7 +78,7 @@ function update_properties() {
 		break;
 		case missileType.speedy: {
 			sprite_index = spr_missile_speedy;
-			move_speed = 700;
+			move_speed = 750;
 			audio_stop_sound(snd_speedy);
 			audio_play_sound(snd_speedy, 0, false);
 		}
@@ -106,7 +106,7 @@ function update_properties() {
 		break;
 	}
 	// after determining the base speed, apply some speed multipliers.
-	move_speed *= (1 + (tier*0.1)); // speed scales based on tier
+	move_speed *= (1 + (tier*0.075)); // speed scales based on tier
 	// important: missiles spawning from top or bottom side should move slower, since there is less vertical space
 	if ((round(y) <= 0) or (round(y) >= room_height)) {
 		move_speed = (move_speed * vertical_multiplier); 
