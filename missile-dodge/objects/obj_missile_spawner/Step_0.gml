@@ -197,7 +197,7 @@ switch(obj_game_manager.level) {
 
 
 		if t(35) {show_notification_game("Some missiles have special properties.");} 
-		if t(38) {show_notification_game("Listen out for them!");} 
+		if t(38) {show_notification_game("They are harder to dodge, so watch out!");} 
 			
 		if t(42) {spawn_missile_speedy_fixed(0, 0, 0.3)} 
 		if t(43) {spawn_missile_speedy_fixed(0, 0, 0.3)} 
@@ -497,7 +497,183 @@ switch(obj_game_manager.level) {
 		
 	}
 	break;
-
+	case 4: {
+		if t(1) {spawn_missile_small_top(0)} if t(1.2) {spawn_missile_small_top(0)} if t(1.4) {spawn_missile_small_top(0)}
+		if t(2) {spawn_missile_small_top(0)} if t(2.2) {spawn_missile_small_top(0)} if t(2.4) {spawn_missile_small_top(0)}
+		if t(3) {spawn_missile_small_bottom(0)} if t(3.2) {spawn_missile_small_bottom(0)} if t(3.4) {spawn_missile_small_bottom(0)}
+		if t(4) {spawn_missile_small_bottom(0)} if t(4.2) {spawn_missile_small_bottom(0)} if t(4.4) {spawn_missile_small_bottom(0)}
+		
+		if t(5) {spawn_missile_regular_left(1)}
+		if t(6) {spawn_missile_regular_right(1)}
+		if t(7) {spawn_missile_regular_left(1)}
+		if t(8) {spawn_missile_regular_right(1)}
+		
+		if t(9) {spawn_missile_regular_top(1) spawn_missile_speedy_fixed(0, 0, 0.3)}
+		if t(10) {spawn_missile_regular_top(1)}
+		if t(11) {spawn_missile_regular_bottom(1) spawn_missile_speedy_fixed(0, 0, 0.7)}
+		if t(12) {spawn_missile_regular_bottom(1)}
+		
+		if t(14) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(14.5) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(15) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		
+		if t(16) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(16.5) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(17) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		
+		if t(18) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2)) spawn_coin(0.25, 0.25)}
+		if t(18.5) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		if t(19) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		
+		if t(20) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2)) spawn_coin(0.75, 0.75)}
+		if t(20.5) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		if t(21) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		
+		if t(22) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2)) spawn_missile_regular_top(1)}
+		if t(22.5) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(23) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		
+		if t(24) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2)) spawn_missile_regular_bottom(1)}
+		if t(24.5) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		if t(25) {spawn_missile_small_fixed(0, 1, 0.4, true, random_range(-2, 2))}
+		
+		if t(26) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2)) spawn_missile_regular_top(1)}
+		if t(26.5) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		if t(27) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		
+		if t(28) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2)) spawn_missile_regular_bottom(1)}
+		if t(28.5) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		if t(29) {spawn_missile_small_fixed(0, 0, 0.4, true, random_range(-2, 2))}
+		
+		if t(32) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_powerup(powerupType.life, 0.2, 0.2)}
+		if t(33) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+		if t(34) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+		if t(35) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+			
+		if t(36) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_right(1)}
+		if t(37) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+		if t(38) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_right(1)}
+		if t(39) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+			
+			
+		if t(41) {spawn_missile_regular_fixed(0, 1, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 1, random_range(0.05, 0.95))}
+		if t(42) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+		if t(43) {spawn_missile_regular_fixed(0, 1, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 1, random_range(0.05, 0.95))}
+		if t(44) {spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))
+			spawn_missile_regular_fixed(0, 0, random_range(0.05, 0.95))}
+			
+		if t(45) {spawn_missile_regular_top(0) spawn_coin(0.25, 0.75)}
+		if t(46) {spawn_missile_regular_bottom(1)}
+		if t(47) {spawn_missile_regular_top(0)}
+		if t(48) {spawn_missile_regular_bottom(1)}
+		
+		if t(49) {spawn_missile_speedy_left(1) spawn_coin(0.5, 0.8)}
+		if t(50) {spawn_missile_speedy_right(1)}
+		if t(51) {spawn_missile_speedy_fixed(1, 0, 0.4)}
+		if t(52) {spawn_missile_speedy_fixed(1, 1, 0.6)}
+		
+		if t(55) {spawn_missile_exploding_left(0) spawn_coin(0.75, 0.75)}
+		if t(56) {spawn_missile_exploding_right(0)}
+		if t(57) {spawn_missile_regular_left(0)}
+		if t(58) {spawn_missile_regular_right(0)}
+		
+		if t(59) {spawn_missile_exploding_left(0) spawn_powerup(powerupType.shield, 0.75, 0.75)}
+		if t(60) {spawn_missile_exploding_right(0)}
+		if t(61) {spawn_missile_regular_left(0)}
+		if t(62) {spawn_missile_regular_right(0)}
+		
+		if t(65) {spawn_missile_exploding_left(1) spawn_coin(0.25, 0.5)}
+		if t(66) {spawn_missile_exploding_right(1)}
+		if t(67) {spawn_missile_regular_left(0)}
+		if t(68) {spawn_missile_regular_right(0)}
+		
+		if t(69) {spawn_missile_exploding_left(1)}
+		if t(70) {spawn_missile_exploding_right(1)}
+		if t(71) {spawn_missile_regular_left(0)}
+		if t(72) {spawn_missile_regular_right(0)}
+		
+		if t(74) {spawn_missile_regular_top(1)}
+		if t(75) {spawn_missile_regular_top(1)}
+		if t(76) {spawn_missile_regular_bottom(1)}
+		if t(77) {spawn_missile_regular_bottom(1)}
+		
+		if t(78) {spawn_missile_regular_left(1) spawn_powerup(powerupType.regen, 0.25, 0.8)}
+		if t(79) {spawn_missile_regular_right(1)}
+		if t(80) {spawn_missile_regular_left(1)}
+		if t(81) {spawn_missile_regular_right(1)}
+		
+		if t(82) {spawn_missile_exploding_fixed(0, 0, 0.35)}
+		if t(83) {spawn_missile_exploding_fixed(0, 1, 0.65)}
+		if t(84) {spawn_missile_regular_left(1)}
+		if t(85) {spawn_missile_regular_right(1)}
+		
+		if t(86) {spawn_missile_regular_left(1) spawn_coin(0.75, 0.25)}
+		if t(87) {spawn_missile_regular_right(1)}
+		if t(88) {spawn_missile_small_left(0)} if t(88.2) {spawn_missile_small_left(0)} if t(88.4) {spawn_missile_small_left(0)}
+		if t(89) {spawn_missile_small_right(0)} if t(89.2) {spawn_missile_small_right(0)} if t(89.4) {spawn_missile_small_right(0)}
+		
+		if t(92) {spawn_missile_regular_fixed(0, 0, 0.3) spawn_missile_regular_right(0) spawn_powerup(powerupType.shield, 0.2, 0.2) spawn_coin(0.75, 0.75)}
+		if t(92.5) {spawn_missile_regular_fixed(0, 0, 0.5)}
+		if t(93) {spawn_missile_regular_fixed(0, 0, 0.7) spawn_missile_regular_right(1)}
+		if t(93.5) {spawn_missile_regular_fixed(0, 0, 0.4)}
+		if t(94) {spawn_missile_regular_fixed(0, 0, 0.6) spawn_missile_regular_right(2)}
+		
+		if t(96) {spawn_missile_regular_fixed(0, 0, 0.3) spawn_missile_regular_top(0) spawn_coin(0.75, 0.5)}
+		if t(96.5) {spawn_missile_regular_fixed(0, 0, 0.5)}
+		if t(97) {spawn_missile_regular_fixed(0, 0, 0.7) spawn_missile_regular_top(0)}
+		if t(97.5) {spawn_missile_regular_fixed(0, 0, 0.4)}
+		if t(98) {spawn_missile_regular_fixed(0, 0, 0.6) spawn_missile_regular_top(1)}
+		
+		if t(100) {spawn_missile_regular_fixed(0, 0, 0.3) spawn_missile_regular_bottom(0)}
+		if t(100.5) {spawn_missile_regular_fixed(0, 0, 0.5)}
+		if t(101) {spawn_missile_regular_fixed(0, 0, 0.7) spawn_missile_regular_bottom(0)}
+		if t(101.5) {spawn_missile_regular_fixed(0, 0, 0.4)}
+		if t(102) {spawn_missile_regular_fixed(0, 0, 0.6) spawn_missile_regular_bottom(1)}
+			
+		if t(104) {spawn_missile_regular_fixed(0, 0, 0.3) spawn_powerup(powerupType.regen, 0.25, 0.75)}
+		if t(104.5) {spawn_missile_regular_fixed(0, 0, 0.5)}
+		if t(105) {spawn_missile_regular_fixed(0, 0, 0.7)}
+		if t(105.5) {spawn_missile_regular_fixed(0, 0, 0.4)}
+		if t(106) {spawn_missile_regular_fixed(0, 0, 0.6) spawn_missile_exploding_fixed(0, 1, 0.4)}
+			
+		if t(108) {spawn_missile_regular_top(0) spawn_missile_small_left(1) spawn_coin(0.25, 0.75)} if t(108.2) {spawn_missile_small_left(1)} if t(108.4) {spawn_missile_small_left(1)}
+		if t(109) {spawn_missile_regular_right(1) spawn_coin(0.25, 0.25)}
+		if t(110) {spawn_missile_regular_bottom(0) spawn_missile_small_left(1)} if t(110.2) {spawn_missile_small_left(1)} if t(110.4) {spawn_missile_small_left(1)}
+		if t(111) {spawn_missile_regular_right(1)}
+		if t(112) {spawn_missile_regular_fixed(2, 0, 0.4, true)}
+		if t(113) {spawn_missile_regular_fixed(2, 0, 0.6, true)}
+		if t(114) {spawn_missile_regular_left(1) spawn_missile_regular_right(1)}
+		
+		if t(120) {obj_game_manager.game_state = gameState.victory;
+			update_and_save_highscore(true)}
+		
+		
+		
+		
+	}
+	break;
 }
 
 time_p = time;

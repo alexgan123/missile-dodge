@@ -95,6 +95,10 @@ function update_properties() {
 			move_speed = 480;
 			audio_stop_sound(snd_explosive);
 			audio_play_sound(snd_explosive, 0, false);
+			flame_width = 1.25;
+			flame_length_max = 2.5;
+			flame_length_min = 2.4;
+			flame_length = flame_length_max;
 		}
 		break;
 		case missileType.scatter: {

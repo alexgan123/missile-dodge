@@ -12,7 +12,7 @@ function update_game_speed() {
 // update the window_fullscreen in game to match the value of global.options_fullscreen
 function update_fullscreen() {
 	window_set_fullscreen(global.options_fullscreen);
-	window_set_size(display_get_width()*0.8, display_get_height()*0.8);
+	window_set_size((display_get_height()*64) / 45, (display_get_height()*4) / 5);
 	obj_main.alarm[0] = 1;
 }
 

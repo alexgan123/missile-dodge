@@ -23,9 +23,12 @@ combo = 0;
 
 // specify the value of each coin for each level
 for (var i = 1; i <= 15; i++) {
-	coin_value[i] = 6250; // default coin value
+	coin_value[i] = 0; // default coin value
 }
-
+coin_value[1] = 6250;
+coin_value[2] = 10625;
+coin_value[3] = 25375;
+coin_value[4] = 15375;
 
 // current damage reduction
 damage_reduction = 0;
