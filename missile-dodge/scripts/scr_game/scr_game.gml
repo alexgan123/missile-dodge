@@ -10,6 +10,12 @@ function show_damage_indicator(_damage) {
 	}
 }
 
+// function to award all missiles on screen
+function award_all_missiles() {
+	with(obj_missile) {
+		award_missile();
+	}
+}
 // function to display a game notification
 function show_notification_game(_message) {
 	audio_play_sound(snd_notification, 0, false);

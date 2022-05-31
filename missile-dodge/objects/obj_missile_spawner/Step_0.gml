@@ -141,6 +141,7 @@ switch(obj_game_manager.level) {
 		if t(114.2) {spawn_missile_small_right(0)} 
 		if t(114.4) {spawn_missile_small_right(0)} 
 			
+		if t(119) {award_all_missiles()}
 		if t(120) {obj_game_manager.game_state = gameState.victory;
 			update_and_save_highscore(true)} 
 	}
@@ -311,6 +312,7 @@ switch(obj_game_manager.level) {
 		if t(113) {spawn_missile_regular_right(2)} 
 		if t(114) {spawn_missile_regular_right(2)} 
 		if t(115) {spawn_missile_regular_right(2)} 
+		if t(119) {award_all_missiles()}
 		if t(120) {obj_game_manager.game_state = gameState.victory;
 			update_and_save_highscore(true)} 
 	}
@@ -491,6 +493,7 @@ switch(obj_game_manager.level) {
 		if t(114) {spawn_missile_small_left(1)}
 		if t(115) {spawn_missile_small_right(1)}
 		
+		if t(119) {award_all_missiles()}
 		if t(120) {obj_game_manager.game_state = gameState.victory;
 			update_and_save_highscore(true)}
 		
@@ -666,6 +669,8 @@ switch(obj_game_manager.level) {
 		if t(113) {spawn_missile_regular_fixed(2, 0, 0.6, true)}
 		if t(114) {spawn_missile_regular_left(1) spawn_missile_regular_right(1)}
 		
+		
+		if t(119) {award_all_missiles()}
 		if t(120) {obj_game_manager.game_state = gameState.victory;
 			update_and_save_highscore(true)}
 		
@@ -674,6 +679,13 @@ switch(obj_game_manager.level) {
 		
 	}
 	break;
+	
+	case 5: {
+		if t(1) {spawn_missile_small_left(0)} 
+		if t(2) {award_all_missiles()}
+	}
+	break;
+	
 }
 
 time_p = time;

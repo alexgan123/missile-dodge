@@ -118,7 +118,7 @@ function spawn_missile_exploding_fixed(_tier, _x_0_to_1, _y_0_to_1) {
 // spawn a coin at (x, y). Coins are worth a constant amount of points for each level.
 function spawn_coin(_x_0_to_1, _y_0_to_1) {
 	var _coin = instance_create_layer(_x_0_to_1*rw, _y_0_to_1*rh, "pickups", obj_coin);
-	_coin.score_ = obj_game_manager.coin_value[obj_game_manager.level];
+	_coin.score_ = global.coin_value[obj_game_manager.level];
 }
 
 // type: powerupType of powerup to be spawned

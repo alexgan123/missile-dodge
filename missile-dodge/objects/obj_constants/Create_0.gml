@@ -61,11 +61,18 @@ enum powerupType {
 // MACROS
 // color macros
 #macro color_red make_colour_rgb(255, 80, 80)
-#macro color_orange make_colour_rgb(255, 153, 51)
+#macro color_orange make_colour_rgb(255, 178, 102)
 #macro color_yellow make_colour_rgb(255, 255, 102)
 #macro color_green make_colour_rgb(102, 255, 102)
 #macro color_blue make_colour_rgb(102, 178, 255)
 #macro color_purple make_colour_rgb(255, 51, 255)
+
+// color constant for the max score
+global.c1 = make_color_rgb(255, 255, 51);
+global.c2 = make_color_rgb(255, 255, 80);
+global.c3 = make_color_rgb(204, 255, 255);
+global.c4 = make_color_rgb(204, 229, 255);
+timer = (1/6);
 
 // speed multiplier for vertical missiles
 #macro vertical_multiplier 0.5625
@@ -83,3 +90,48 @@ enum powerupType {
 #macro up 90
 #macro left 180
 #macro down 270
+
+// The max score for each level must be known beforehand
+
+// the max score for each level = the max score from dodging all missiles * 2
+global.max_score[0] = 0;
+global.max_score[1] = 152640;
+global.max_score[2] = 212160;
+global.max_score[3] = 457560;
+global.max_score[4] = 338496;
+global.max_score[5] = 0;
+global.max_score[6] = 0;
+global.max_score[7] = 0;
+global.max_score[8] = 0;
+global.max_score[9] = 0;
+global.max_score[10] = 0;
+global.max_score[11] = 0;
+global.max_score[12] = 0;
+global.max_score[13] = 0;
+global.max_score[14] = 0;
+global.max_score[15] = 0;
+
+// the number of coins in each level
+global.coin_count[0] = 0;
+global.coin_count[1] = 12;
+global.coin_count[2] = 10;
+global.coin_count[3] = 9;
+global.coin_count[4] = 11;
+global.coin_count[5] = 0;
+global.coin_count[6] = 0;
+global.coin_count[7] = 0;
+global.coin_count[8] = 0;
+global.coin_count[9] = 0;
+global.coin_count[10] = 0;
+global.coin_count[11] = 0;
+global.coin_count[12] = 0;
+global.coin_count[13] = 0;
+global.coin_count[14] = 0;
+global.coin_count[15] = 0;
+
+// formula for coin value
+global.coin_value[0] = 0;
+for (var i = 1; i <= 15; i++) {
+	global.coin_value[i] = global.max_score[i] / (2*global.coin_count[i]);
+}
+
