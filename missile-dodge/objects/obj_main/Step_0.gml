@@ -18,4 +18,4 @@ global.stats_time_played_seconds = (global.stats_time_played mod 3600) mod 60;
 // global.delta should also be used for timers, so that the timer decreases at a rate of 1 per second
 
 // do not use built in alarms (alarm[0], etc)
-global.delta = delta_time*1.5/(1000000);
+global.delta = delta_time/(1000000);

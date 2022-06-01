@@ -1,6 +1,6 @@
 timer -= global.delta;
 if (timer <= 0) {
-	timer = (1/6);
+	timer = (1/8);
 	var tmp = global.c1;
 	global.c1 = global.c2;
 	global.c2 = global.c3;
