@@ -115,6 +115,18 @@ function spawn_missile_exploding_fixed(_tier, _x_0_to_1, _y_0_to_1) {
 }
 
 	
+function spawn_missile_scatter(_tier, _x_0_to_1, _y_0_to_1) {
+	var _x = _x_0_to_1*rw;
+	var _y = _y_0_to_1*rh;
+	var _dir = right;
+	if (_x_0_to_1 == 0) _dir = right;
+	else if (_x_0_to_1 == 1) _dir = left;
+	else if (_y_0_to_1 == 0) _dir = down;
+	else if (_y_0_to_1 == 1) _dir = up;
+	
+	spawn_missile(missileType.scatter, _tier, _x, _y, _dir);
+}
+
 // spawn a coin at (x, y). Coins are worth a constant amount of points for each level.
 function spawn_coin(_x_0_to_1, _y_0_to_1) {
 	var _coin = instance_create_layer(_x_0_to_1*rw, _y_0_to_1*rh, "pickups", obj_coin);

@@ -46,4 +46,3 @@ part_type_life(global.part_death, 20, 20);
 
 
 
-

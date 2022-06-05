@@ -90,6 +90,7 @@ global.options_vsync = ini_read_real("options", "vsync", false);
 
 global.game_level = ini_read_real("game", "level", 1); // highest level unlocked
 
+global.highscore[0] = 0;
 for (var i = 1; i <= 15; i++) {
 	global.highscore[i] = ini_read_real("highscore", string(i), 0); // highscore for each level
 }

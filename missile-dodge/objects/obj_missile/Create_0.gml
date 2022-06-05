@@ -52,7 +52,7 @@ function update_properties() {
 		fuse = 0.75;
 	}
 	else if (missile_type == missileType.scatter) {
-		fuse = round(random_range(2, 3));
+		fuse = random_range(0.5, 3.5);
 	}
 	// determine the color of the missile
 	image_index = tier;
@@ -110,7 +110,9 @@ function update_properties() {
 		break;
 	}
 	// after determining the base speed, apply some speed multipliers.
-	move_speed *= (1 + (tier*0.075)); // speed scales based on tier
+	if (missile_type != missileType.scatter) {
+		move_speed *= (1 + (tier*0.075)); // speed scales based on tier
+	}
 	// important: missiles spawning from top or bottom side should move slower, since there is less vertical space
 	if ((round(y) <= 0) or (round(y) >= room_height)) {
 		move_speed = (move_speed * vertical_multiplier); 
