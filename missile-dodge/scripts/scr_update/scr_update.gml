@@ -24,6 +24,9 @@ function update_vsync() {
 // update the global.highscore variable and save
 // OPTIONALLY increments the global.level variable so the user can advance to the next level. 
 function update_and_save_highscore(_increment_game_level = false) {
+	
+	data_send_score();
+	
 	// update the highscore if possible
 	if (round(obj_game_manager.score_) > global.highscore[obj_game_manager.level]) {
 		global.highscore[obj_game_manager.level] = round(obj_game_manager.score_);

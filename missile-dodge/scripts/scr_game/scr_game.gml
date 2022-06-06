@@ -54,6 +54,7 @@ function show_notification_powerup(_powerup_type) {
 // such as game over, losing a life, etc.
 // =====This function MUST be used to reduce the Player's HP.=====
 function player_take_hit(_damage) {
+	data_send_hit();
 	obj_game_manager.immune = true;
 	obj_game_manager.alarm4 = 1;
 	

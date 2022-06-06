@@ -49,6 +49,7 @@ function execute_click_function() {
 						linked_text_box.new_prompt("Choose a different username!");
 					}
 					else {
+						data_send_name_change(global.player_name, _input);
 						// successfully changed the player name
 						linked_text_box.new_prompt("Username successfully updated.");
 						global.player_name = _input;
@@ -56,7 +57,6 @@ function execute_click_function() {
 						ini_write_string("player", "name", global.player_name);
 						ini_close();
 						
-						data_send_login();
 						// change the menu state
 						obj_menu_manager.menu_state = destination_state;
 					}
