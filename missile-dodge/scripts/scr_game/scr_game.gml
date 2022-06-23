@@ -15,6 +15,9 @@ function award_all_missiles() {
 	with(obj_missile) {
 		award_missile();
 	}
+	with(obj_bullet) {
+		instance_destroy();	
+	}
 }
 // function to display a game notification
 function show_notification_game(_message) {

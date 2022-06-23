@@ -13,4 +13,3 @@ if (instance_exists(obj_coin)) {
 	var _dir = point_direction(x, y, _inst.x, _inst.y);
 	draw_sprite_ext(spr_coin_arrow, 0, x, y, 1, 1, _dir-90, c_white, 0.75);
 }
-

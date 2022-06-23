@@ -29,7 +29,7 @@ function outside_playing_area() {
 // checks if awarded flag is false to prevent point from being awarded twice.
 function award_missile() {
 	if (!awarded) {
-		obj_game_manager.score_ += 300 + (8*obj_game_manager.combo);
+		obj_game_manager.score_ += 1250 + ((global.combo_multiplier[obj_game_manager.level])*obj_game_manager.combo);
 		obj_game_manager.combo += 1;
 		awarded = true;
 		instance_destroy();
@@ -64,12 +64,12 @@ function update_properties() {
 	switch (missile_type) {
 		case missileType.regular: { 
 			sprite_index = spr_missile;
-			move_speed = 480;
+			move_speed = 410;
 		}
 		break;
 		case missileType.small: {
 			sprite_index = spr_missile_small;
-			move_speed = 515;
+			move_speed = 440;
 			flame_width = 0.5;
 			flame_length_max = 1.5;
 			flame_length_min = 1.4;
@@ -78,21 +78,21 @@ function update_properties() {
 		break;
 		case missileType.speedy: {
 			sprite_index = spr_missile_speedy;
-			move_speed = 750;
+			move_speed = 640;
 			audio_stop_sound(snd_speedy);
 			audio_play_sound(snd_speedy, 0, false);
 		}
 		break;
 		case missileType.homing: {
 			sprite_index = spr_missile_homing;
-			move_speed = 576;
+			move_speed = 490;
 			audio_stop_sound(snd_homing);
 			audio_play_sound(snd_homing, 0, false);
 		}
 		break;
 		case missileType.exploding: {
 			sprite_index = spr_missile_exploding;
-			move_speed = 480;
+			move_speed = 380;
 			audio_stop_sound(snd_explosive);
 			audio_play_sound(snd_explosive, 0, false);
 			flame_width = 1.25;
@@ -103,9 +103,12 @@ function update_properties() {
 		break;
 		case missileType.scatter: {
 			sprite_index = spr_missile_scatter;
-			move_speed = 480;
+			move_speed = 460;
 			audio_stop_sound(snd_scatter);
 			audio_play_sound(snd_scatter, 0, false);
+			flame_length_max = 2.3;
+			flame_length_min = 2.2;
+			flame_length = flame_length_max;
 		}
 		break;
 	}

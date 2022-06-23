@@ -18,7 +18,7 @@ function update_properties() {
 	image_index = tier;
 	image_angle = direction - 90;
 	damage = 200 + (tier)*100;
-	move_speed = 480 * (1 + (tier*0.05));
+	move_speed = 360 * (1 + (tier*0.05));
 	audio_stop_sound(snd_split);
 	audio_play_sound(snd_split, 0, false);
 }

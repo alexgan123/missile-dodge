@@ -91,17 +91,17 @@ timer = (1/6);
 #macro left 180
 #macro down 270
 
-// The max score for each level must be known beforehand
+// the max score for each level = the max score from dodging all missiles without coins * 2
 
-// the max score for each level = the max score from dodging all missiles * 2
+// Max score should be integer.
 global.max_score[0] = 0;
-global.max_score[1] = 152640;
-global.max_score[2] = 212160;
-global.max_score[3] = 457560;
-global.max_score[4] = 338496;
-global.max_score[5] = 559360;
-global.max_score[6] = 576576;
-global.max_score[7] = 0;
+global.max_score[1] = 598900;
+global.max_score[2] = 928720;
+global.max_score[3] = 2268940;
+global.max_score[4] = 1841776;
+global.max_score[5] = 3419180;
+global.max_score[6] = 3856320;
+global.max_score[7] = 3421740;
 global.max_score[8] = 0;
 global.max_score[9] = 0;
 global.max_score[10] = 0;
@@ -111,7 +111,7 @@ global.max_score[13] = 0;
 global.max_score[14] = 0;
 global.max_score[15] = 0;
 
-// the number of coins in each level
+// the number of coins in each level (integer)
 global.coin_count[0] = 0;
 global.coin_count[1] = 12;
 global.coin_count[2] = 10;
@@ -119,7 +119,7 @@ global.coin_count[3] = 9;
 global.coin_count[4] = 11;
 global.coin_count[5] = 13;
 global.coin_count[6] = 13;
-global.coin_count[7] = 0;
+global.coin_count[7] = 16;
 global.coin_count[8] = 0;
 global.coin_count[9] = 0;
 global.coin_count[10] = 0;
@@ -129,9 +129,16 @@ global.coin_count[13] = 0;
 global.coin_count[14] = 0;
 global.coin_count[15] = 0;
 
-// formula for coin value
+// score multiplier for each level (integer)
+global.combo_multiplier[0] = 0;
+for (var i = 1; i <= 15; i++) {
+	global.combo_multiplier[i] = 30 + (6*(i-1));
+}
+
+
+// formula for coin value (coin value may be a decimal)
 global.coin_value[0] = 0;
 for (var i = 1; i <= 15; i++) {
 	global.coin_value[i] = global.max_score[i] / (2*global.coin_count[i]);
+	show_debug_message(global.coin_value[i])
 }
-
