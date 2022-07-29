@@ -13,3 +13,5 @@ if (instance_exists(obj_coin)) {
 	var _dir = point_direction(x, y, _inst.x, _inst.y);
 	draw_sprite_ext(spr_coin_arrow, 0, x, y, 1, 1, _dir-90, c_white, 0.75);
 }
+
+draw_text_f(c_white, fa_center, fa_middle, calibri_25, x, y+40, string(obj_game_manager.score_))

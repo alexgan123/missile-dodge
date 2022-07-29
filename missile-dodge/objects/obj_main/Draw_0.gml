@@ -33,5 +33,5 @@ string(global.stats_deaths) + " " + string(global.stats_powerups_collected) + " 
 draw_text_f(c_white, fa_left, fa_bottom, calibri_15, 20, 850, "playericonandname " + 
 string(global.player_icon) + " " + global.player_name);
 
-draw_text_f(c_white, fa_left, fa_bottom, calibri_15, 20, 810, string(global.c1) + " " + string(global.c2));
+
 

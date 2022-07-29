@@ -16,7 +16,7 @@ if (active) {
 		break;
 		case buttonType.start_game: {
 			var _str = (global.highscore[level] > 0 ? thousands(global.highscore[level]) : "")
-			if (global.highscore[level] >= global.max_score[level]) draw_text_color(x, y-60, _str, global.c1, global.c3, global.c2, global.c4, 1);
+			if (global.highscore[level] >= global.max_score[level]) draw_text_f(color_green, fa_center, fa_middle, calibri_20, x, y-60, _str);
 			else draw_text_f(c_white, fa_center, fa_middle, calibri_20, x, y-60, _str);
 		}
 		break;

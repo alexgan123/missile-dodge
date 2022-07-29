@@ -87,7 +87,11 @@ function update_properties() {
 			sprite_index = spr_missile_homing;
 			move_speed = 490;
 			audio_stop_sound(snd_homing);
-			audio_play_sound(snd_homing, 0, false);
+			audio_play_sound(snd_homing, 0, false);		
+			flame_width = 1.25;
+			flame_length_max = 2.5;
+			flame_length_min = 2.4;
+			flame_length = flame_length_max;
 		}
 		break;
 		case missileType.exploding: {

@@ -114,7 +114,8 @@ function spawn_missile_exploding_fixed(_tier, _x_0_to_1, _y_0_to_1) {
 	spawn_missile(missileType.exploding, _tier, _x, _y, _dir);
 }
 
-	
+
+// scatter missiles: specify the spawn location: always travels left or right.
 function spawn_missile_scatter(_tier, _x_0_to_1, _y_0_to_1) {
 	var _x = _x_0_to_1*rw;
 	var _y = _y_0_to_1*rh;
@@ -125,6 +126,19 @@ function spawn_missile_scatter(_tier, _x_0_to_1, _y_0_to_1) {
 	else if (_y_0_to_1 == 1) _dir = up;
 	
 	spawn_missile(missileType.scatter, _tier, _x, _y, _dir);
+}
+
+// homing missiles: specify spawn location: always homes in on player.
+function spawn_missile_homing(_tier, _x_0_to_1, _y_0_to_1) {
+	var _x = _x_0_to_1*rw;
+	var _y = _y_0_to_1*rh;
+	var _dir = right;
+	if (_x_0_to_1 == 0) _dir = right;
+	else if (_x_0_to_1 == 1) _dir = left;
+	else if (_y_0_to_1 == 0) _dir = down;
+	else if (_y_0_to_1 == 1) _dir = up;
+	
+	spawn_missile(missileType.homing, _tier, _x, _y, _dir);
 }
 
 // spawn a coin at (x, y). Coins are worth a constant amount of points for each level.

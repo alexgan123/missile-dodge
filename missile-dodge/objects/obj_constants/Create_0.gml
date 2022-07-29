@@ -67,12 +67,6 @@ enum powerupType {
 #macro color_blue make_colour_rgb(102, 178, 255)
 #macro color_purple make_colour_rgb(255, 51, 255)
 
-// color constant for the max score
-global.c1 = make_color_rgb(204, 204, 0);
-global.c2 = make_color_rgb(255, 255, 0);
-global.c3 = make_color_rgb(255, 255, 204);
-global.c4 = make_color_rgb(255, 229, 204);
-timer = (1/6);
 
 // speed multiplier for vertical missiles
 #macro vertical_multiplier 0.5625
@@ -102,7 +96,7 @@ global.max_score[4] = 1841776;
 global.max_score[5] = 3419180;
 global.max_score[6] = 3856320;
 global.max_score[7] = 3421740;
-global.max_score[8] = 0;
+global.max_score[8] = 5578504;
 global.max_score[9] = 0;
 global.max_score[10] = 0;
 global.max_score[11] = 0;
@@ -120,7 +114,7 @@ global.coin_count[4] = 11;
 global.coin_count[5] = 13;
 global.coin_count[6] = 13;
 global.coin_count[7] = 16;
-global.coin_count[8] = 0;
+global.coin_count[8] = 14;
 global.coin_count[9] = 0;
 global.coin_count[10] = 0;
 global.coin_count[11] = 0;

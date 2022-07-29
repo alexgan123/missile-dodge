@@ -4,7 +4,7 @@ if (outside_playing_area()) {
 if (obj_game_manager.game_state == gameState.playing) {
 	speed = move_speed * global.delta;
 	if (missile_type == missileType.homing) {
-		direction = angle_approach(direction, point_direction(x, y, obj_player.x, obj_player.y), 0.08*global.delta);
+		direction = angle_approach(direction, point_direction(x, y, obj_player.x, obj_player.y), 21*global.delta);
 		image_angle = direction - 90;
 	}
 	else if (missile_type == missileType.exploding) {
